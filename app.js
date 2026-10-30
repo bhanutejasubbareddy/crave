@@ -143,6 +143,654 @@ const restaurants = [
       { id: "churros", name: "Cinnamon Sugar Churros", description: "Freshly fried churros with chocolate dipping sauce.", price: 179, veg: true, popular: false, image: "photo-1624371414361-e670edf4898d" },
     ],
   },
+  {
+    id: "cocoa-corner",
+    name: "Cocoa Corner",
+    cuisine: "Chocolate · Truffles · Brownies",
+    rating: 4.8,
+    delivery: 25,
+    cost: 300,
+    offer: "15% off chocolate boxes",
+    category: "Chocolate",
+    veg: true,
+    image: "photo-1511381939415-e44015466834",
+    dishes: [
+      { id: "chocolate-truffle-box", name: "Chocolate Truffle Box", description: "A box of rich, hand-rolled dark chocolate truffles.", price: 299, veg: true, popular: true, image: "photo-1511381939415-e44015466834" },
+      { id: "hazelnut-chocolate-bar", name: "Hazelnut Chocolate Bar", description: "Creamy milk chocolate with roasted hazelnut pieces.", price: 179, veg: true, popular: true, image: "photo-1526081347589-7fa3cb41b4b2" },
+      { id: "chocolate-lava-cake", name: "Chocolate Lava Cake", description: "Warm chocolate cake with a gooey molten center.", price: 199, veg: true, popular: false, image: "photo-1606313564200-e75d5e30476c" },
+      { id: "chocolate-covered-strawberries", name: "Chocolate Strawberries", description: "Fresh strawberries dipped in smooth dark chocolate.", price: 249, veg: true, popular: false, image: "photo-1511381939415-e44015466834" },
+    ],
+  },
+  {
+    id: "scoop-station",
+    name: "Scoop Station",
+    cuisine: "Ice cream · Sundaes · Shakes",
+    rating: 4.7,
+    delivery: 20,
+    cost: 220,
+    offer: "Free topping with every sundae",
+    category: "Ice Cream",
+    veg: true,
+    image: "photo-1560008581-09826d1de69e",
+    dishes: [
+      { id: "vanilla-bean-scoop", name: "Vanilla Bean Scoop", description: "Classic Madagascan vanilla bean ice cream.", price: 99, veg: true, popular: true, image: "photo-1560008581-09826d1de69e" },
+      { id: "chocolate-fudge-sundae", name: "Chocolate Fudge Sundae", description: "Chocolate ice cream, warm fudge, and crunchy nuts.", price: 189, veg: true, popular: true, image: "photo-1563805042-7684c019e1cb" },
+      { id: "mango-ice-cream", name: "Mango Ice Cream", description: "Creamy mango ice cream made with ripe fruit.", price: 129, veg: true, popular: false, image: "photo-1501446529957-6226bd447c46" },
+      { id: "strawberry-milkshake", name: "Strawberry Milkshake", description: "A thick strawberry shake topped with whipped cream.", price: 169, veg: true, popular: false, image: "photo-1572490122747-3968b75cc699" },
+    ],
+  },
+  {
+    id: "nutty-nook",
+    name: "Nutty Nook",
+    cuisine: "Dry fruits · Nuts · Trail mixes",
+    rating: 4.6,
+    delivery: 26,
+    cost: 400,
+    offer: "10% off orders above ₹499",
+    category: "Dry Fruits",
+    veg: true,
+    image: "photo-1505576399279-565b52d4ac71",
+    dishes: [
+      { id: "premium-dry-fruit-box", name: "Premium Dry Fruit Box", description: "A balanced mix of almonds, cashews, pistachios, and raisins.", price: 499, veg: true, popular: true, image: "photo-1505576399279-565b52d4ac71" },
+      { id: "roasted-almonds", name: "Roasted Almonds", description: "Lightly roasted almonds with a touch of sea salt.", price: 249, veg: true, popular: true, image: "photo-1505576399279-565b52d4ac71" },
+      { id: "cashew-pistachio-mix", name: "Cashew & Pistachio Mix", description: "Crunchy whole cashews and pistachios, ready to snack.", price: 329, veg: true, popular: false, image: "photo-1511499767150-a48a237f0083" },
+      { id: "fruit-and-nut-trail-mix", name: "Fruit & Nut Trail Mix", description: "Dried fruit, seeds, and nuts for an easy snack.", price: 199, veg: true, popular: false, image: "photo-1490645935967-10de6ba17061" },
+    ],
+  },
+  {
+    id: "stone-oven-pizza",
+    name: "Stone Oven Pizza Co.",
+    cuisine: "Wood-fired pizza · Italian",
+    rating: 4.7,
+    delivery: 29,
+    cost: 400,
+    offer: "Free garlic bread above ₹599",
+    category: "Pizza",
+    veg: true,
+    image: "photo-1579751626657-72bc17010498",
+    dishes: [
+      { id: "four-cheese-pizza", name: "Four Cheese Pizza", description: "Mozzarella, parmesan, gorgonzola, and a golden crust.", price: 399, veg: true, popular: true, image: "photo-1579751626657-72bc17010498" },
+      { id: "pepperoni-pizza", name: "Pepperoni Pizza", description: "Classic pepperoni, mozzarella, and tomato sauce.", price: 449, veg: false, popular: true, image: "photo-1513104890138-7c749659a591" },
+      { id: "pesto-veggie-pizza", name: "Pesto Garden Pizza", description: "Basil pesto, peppers, olives, and fresh mozzarella.", price: 379, veg: true, popular: false, image: "photo-1571407970349-bc81e7e96d47" },
+      { id: "garlic-bread", name: "Cheesy Garlic Bread", description: "Oven-baked bread with garlic butter and melted cheese.", price: 169, veg: true, popular: false, image: "photo-1579751626657-72bc17010498" },
+    ],
+  },
+  {
+    id: "grill-and-bun",
+    name: "Grill & Bun",
+    cuisine: "Gourmet burgers · Loaded fries",
+    rating: 4.5,
+    delivery: 23,
+    cost: 320,
+    offer: "Free fries with burger combo",
+    category: "Burgers",
+    veg: false,
+    image: "photo-1550547660-d9450f859349",
+    dishes: [
+      { id: "bbq-smoky-burger", name: "Smoky BBQ Burger", description: "Grilled patty, smoky barbecue sauce, and crisp onions.", price: 329, veg: false, popular: true, image: "photo-1550547660-d9450f859349" },
+      { id: "crispy-chicken-burger", name: "Crispy Chicken Burger", description: "Crunchy chicken, lettuce, and house-made pepper mayo.", price: 299, veg: false, popular: true, image: "photo-1568901346375-23c9450c58cd" },
+      { id: "paneer-crunch-burger", name: "Paneer Crunch Burger", description: "Spiced crispy paneer with fresh slaw and mint mayo.", price: 269, veg: true, popular: false, image: "photo-1520072959219-c595dc870360" },
+      { id: "loaded-cheese-fries", name: "Loaded Cheese Fries", description: "Golden fries topped with creamy cheese sauce.", price: 189, veg: true, popular: false, image: "photo-1573080496219-bb080dd4f877" },
+    ],
+  },
+  {
+    id: "masala-mela",
+    name: "Masala Mela",
+    cuisine: "North Indian · Punjabi · Thalis",
+    rating: 4.6,
+    delivery: 31,
+    cost: 330,
+    offer: "₹100 off family meals",
+    category: "North Indian",
+    veg: true,
+    image: "photo-1546833999-b9f581a1996d",
+    dishes: [
+      { id: "shahi-paneer", name: "Shahi Paneer", description: "Soft paneer in a creamy cashew and tomato gravy.", price: 289, veg: true, popular: true, image: "photo-1631452180519-c014fe946bc7" },
+      { id: "chole-bhature", name: "Chole Bhature", description: "Spiced chickpeas with fluffy, freshly fried bhature.", price: 219, veg: true, popular: true, image: "photo-1626132647523-66f5bf380027" },
+      { id: "punjabi-veg-thali", name: "Punjabi Veg Thali", description: "A hearty platter with dal, seasonal curry, rice, and roti.", price: 329, veg: true, popular: false, image: "photo-1546833999-b9f581a1996d" },
+      { id: "garlic-naan", name: "Garlic Butter Naan", description: "Soft tandoor-baked naan brushed with garlic butter.", price: 69, veg: true, popular: false, image: "photo-1585937421612-70a008356fbe" },
+    ],
+  },
+  {
+    id: "idli-express",
+    name: "Idli Express",
+    cuisine: "South Indian · Idli · Meals",
+    rating: 4.6,
+    delivery: 21,
+    cost: 200,
+    offer: "Free filter coffee above ₹299",
+    category: "South Indian",
+    veg: true,
+    image: "photo-1589301760014-d929f3979dbc",
+    dishes: [
+      { id: "podi-idli", name: "Ghee Podi Idli", description: "Soft idlis tossed in aromatic lentil spice and ghee.", price: 149, veg: true, popular: true, image: "photo-1589301760014-d929f3979dbc" },
+      { id: "onion-uttapam", name: "Onion Uttapam", description: "Thick rice-and-lentil pancake topped with onion and herbs.", price: 169, veg: true, popular: true, image: "photo-1630383249896-424e482df921" },
+      { id: "mini-tiffin", name: "Mini Tiffin", description: "A little dosa, idli, pongal, vada, and fresh chutneys.", price: 229, veg: true, popular: false, image: "photo-1547592180-85f173990554" },
+      { id: "pongal", name: "Pepper Pongal", description: "Comforting rice and lentils finished with pepper and cashews.", price: 159, veg: true, popular: false, image: "photo-1546833999-b9f581a1996d" },
+    ],
+  },
+  {
+    id: "noodle-garden",
+    name: "Noodle Garden",
+    cuisine: "Asian · Thai · Noodles",
+    rating: 4.7,
+    delivery: 27,
+    cost: 350,
+    offer: "10% off noodle bowls",
+    category: "Asian",
+    veg: true,
+    image: "photo-1569718212165-3a8278d5f624",
+    dishes: [
+      { id: "veg-pad-thai", name: "Vegetable Pad Thai", description: "Rice noodles, crunchy vegetables, peanuts, and lime.", price: 279, veg: true, popular: true, image: "photo-1569718212165-3a8278d5f624" },
+      { id: "thai-green-curry", name: "Thai Green Curry", description: "Fragrant coconut curry with vegetables and jasmine rice.", price: 319, veg: true, popular: true, image: "photo-1547592180-85f173990554" },
+      { id: "sesame-tofu-bowl", name: "Sesame Tofu Bowl", description: "Crisp tofu, sesame greens, and steamed rice.", price: 299, veg: true, popular: false, image: "photo-1512621776951-a57141f2eefd" },
+      { id: "spring-rolls", name: "Crispy Spring Rolls", description: "Golden vegetable rolls with a sweet chilli dip.", price: 179, veg: true, popular: false, image: "photo-1541696432-82c6da8ce7bf" },
+    ],
+  },
+  {
+    id: "green-spoon",
+    name: "The Green Spoon",
+    cuisine: "Healthy · Salads · Smoothies",
+    rating: 4.8,
+    delivery: 24,
+    cost: 320,
+    offer: "Free smoothie above ₹499",
+    category: "Healthy",
+    veg: true,
+    image: "photo-1512621776951-a57141f2eefd",
+    dishes: [
+      { id: "avocado-grain-bowl", name: "Avocado Grain Bowl", description: "Avocado, quinoa, chickpeas, and greens with lemon dressing.", price: 349, veg: true, popular: true, image: "photo-1512621776951-a57141f2eefd" },
+      { id: "greek-salad", name: "Fresh Greek Salad", description: "Cucumber, tomato, olives, feta, and fresh herbs.", price: 279, veg: true, popular: true, image: "photo-1540420773420-3366772f4999" },
+      { id: "protein-power-wrap", name: "Protein Power Wrap", description: "Grilled vegetables, hummus, greens, and whole-grain wrap.", price: 259, veg: true, popular: false, image: "photo-1540420773420-3366772f4999" },
+      { id: "berry-yogurt-smoothie", name: "Berry Yogurt Smoothie", description: "Mixed berries blended with yogurt and banana.", price: 189, veg: true, popular: false, image: "photo-1505252585461-04db1eb84625" },
+    ],
+  },
+  {
+    id: "sugar-and-slice",
+    name: "Sugar & Slice",
+    cuisine: "Desserts · Pastries · Puddings",
+    rating: 4.8,
+    delivery: 26,
+    cost: 240,
+    offer: "Buy 2 pastries, get 1 free",
+    category: "Desserts",
+    veg: true,
+    image: "photo-1488477181946-6428a0291777",
+    dishes: [
+      { id: "chocolate-mousse", name: "Chocolate Mousse Cup", description: "Light, silky chocolate mousse finished with cocoa.", price: 179, veg: true, popular: true, image: "photo-1578985545062-69928b1d9587" },
+      { id: "lemon-tart", name: "Lemon Cream Tart", description: "Buttery pastry filled with bright, tangy lemon cream.", price: 199, veg: true, popular: true, image: "photo-1488477181946-6428a0291777" },
+      { id: "caramel-pudding", name: "Caramel Pudding", description: "Smooth baked custard with a golden caramel topping.", price: 149, veg: true, popular: false, image: "photo-1488477181946-6428a0291777" },
+      { id: "red-velvet-cupcake", name: "Red Velvet Cupcake", description: "Soft cocoa sponge topped with cream cheese frosting.", price: 129, veg: true, popular: false, image: "photo-1578985545062-69928b1d9587" },
+    ],
+  },
+  {
+    id: "taco-trail",
+    name: "Taco Trail",
+    cuisine: "Mexican · Burritos · Quesadillas",
+    rating: 4.5,
+    delivery: 28,
+    cost: 310,
+    offer: "Free salsa with every order",
+    category: "Mexican",
+    veg: true,
+    image: "photo-1551504734-5ee1c4a1479b",
+    dishes: [
+      { id: "veggie-quesadilla", name: "Grilled Veggie Quesadilla", description: "Toasted tortilla packed with peppers, beans, and cheese.", price: 249, veg: true, popular: true, image: "photo-1565299585323-38d6b0865b47" },
+      { id: "crispy-fish-burrito", name: "Crispy Fish Burrito", description: "Seasoned fish, rice, crunchy slaw, and lime crema.", price: 329, veg: false, popular: true, image: "photo-1551504734-5ee1c4a1479b" },
+      { id: "street-corn-cup", name: "Mexican Street Corn", description: "Sweet corn with lime, herbs, and a creamy chilli topping.", price: 159, veg: true, popular: false, image: "photo-1513456852971-30c0b8199d4d" },
+      { id: "guacamole-chips", name: "Guacamole & Chips", description: "Fresh avocado dip with crisp corn tortilla chips.", price: 199, veg: true, popular: false, image: "photo-1513456852971-30c0b8199d4d" },
+    ],
+  },
+  {
+    id: "choco-and-co",
+    name: "Choco & Co.",
+    cuisine: "Chocolate · Desserts · Gifts",
+    rating: 4.7,
+    delivery: 23,
+    cost: 350,
+    offer: "Free gift wrap on chocolate boxes",
+    category: "Chocolate",
+    veg: true,
+    image: "photo-1526081347589-7fa3cb41b4b2",
+    dishes: [
+      { id: "dark-chocolate-bark", name: "Almond Dark Chocolate Bark", description: "Snappy dark chocolate scattered with toasted almonds.", price: 229, veg: true, popular: true, image: "photo-1526081347589-7fa3cb41b4b2" },
+      { id: "salted-caramel-truffles", name: "Salted Caramel Truffles", description: "Chocolate truffles with a smooth salted caramel center.", price: 279, veg: true, popular: true, image: "photo-1511381939415-e44015466834" },
+      { id: "chocolate-chip-brownie", name: "Chocolate Chip Brownie", description: "A fudgy brownie packed with dark chocolate chips.", price: 169, veg: true, popular: false, image: "photo-1606313564200-e75d5e30476c" },
+      { id: "cocoa-drinking-chocolate", name: "Drinking Chocolate", description: "A rich, warming cup of smooth melted chocolate.", price: 149, veg: true, popular: false, image: "photo-1511381939415-e44015466834" },
+    ],
+  },
+  {
+    id: "sundae-social",
+    name: "Sundae Social",
+    cuisine: "Ice cream · Frozen yogurt · Sundaes",
+    rating: 4.8,
+    delivery: 19,
+    cost: 250,
+    offer: "Add a free topping to any sundae",
+    category: "Ice Cream",
+    veg: true,
+    image: "photo-1563805042-7684c019e1cb",
+    dishes: [
+      { id: "cookie-dough-scoop", name: "Cookie Dough Scoop", description: "Creamy vanilla ice cream with chunks of cookie dough.", price: 139, veg: true, popular: true, image: "photo-1560008581-09826d1de69e" },
+      { id: "berry-cheesecake-sundae", name: "Berry Cheesecake Sundae", description: "Cheesecake ice cream, berry sauce, and buttery crumble.", price: 219, veg: true, popular: true, image: "photo-1563805042-7684c019e1cb" },
+      { id: "pistachio-gelato", name: "Pistachio Gelato", description: "Smooth Italian-style gelato with roasted pistachios.", price: 159, veg: true, popular: false, image: "photo-1501446529957-6226bd447c46" },
+      { id: "classic-banana-split", name: "Classic Banana Split", description: "Banana, three scoops, chocolate sauce, and sprinkles.", price: 239, veg: true, popular: false, image: "photo-1563805042-7684c019e1cb" },
+    ],
+  },
+  {
+    id: "almond-and-fig",
+    name: "Almond & Fig",
+    cuisine: "Dry fruits · Dates · Gift boxes",
+    rating: 4.7,
+    delivery: 24,
+    cost: 420,
+    offer: "Free delivery above ₹499",
+    category: "Dry Fruits",
+    veg: true,
+    image: "photo-1490645935967-10de6ba17061",
+    dishes: [
+      { id: "medjool-dates", name: "Medjool Dates", description: "Naturally sweet, soft dates selected for snacking.", price: 279, veg: true, popular: true, image: "photo-1490645935967-10de6ba17061" },
+      { id: "honey-roasted-cashews", name: "Honey Roasted Cashews", description: "Crunchy cashews coated with a light honey glaze.", price: 299, veg: true, popular: true, image: "photo-1505576399279-565b52d4ac71" },
+      { id: "golden-raisins", name: "Golden Raisins", description: "Plump, naturally sweet raisins, ready to enjoy.", price: 159, veg: true, popular: false, image: "photo-1505576399279-565b52d4ac71" },
+      { id: "everyday-nut-mix", name: "Everyday Nut Mix", description: "A handy mix of almonds, cashews, and pumpkin seeds.", price: 229, veg: true, popular: false, image: "photo-1511499767150-a48a237f0083" },
+    ],
+  },
+  {
+    id: "pizza-parlor",
+    name: "Pizza Parlor",
+    cuisine: "Pizza · Italian · Family meals",
+    rating: 4.6,
+    delivery: 27,
+    cost: 390,
+    offer: "Free dip with every pizza",
+    category: "Pizza",
+    veg: true,
+    image: "photo-1571407970349-bc81e7e96d47",
+    dishes: [
+      { id: "classic-veggie-pizza", name: "Classic Veggie Pizza", description: "Bell peppers, mushrooms, olives, and mozzarella.", price: 329, veg: true, popular: true, image: "photo-1571407970349-bc81e7e96d47" },
+      { id: "spicy-paneer-pizza", name: "Spicy Paneer Pizza", description: "Tandoori paneer, red onion, and a chilli cheese blend.", price: 379, veg: true, popular: true, image: "photo-1513104890138-7c749659a591" },
+      { id: "marinara-pizza", name: "Tomato Basil Pizza", description: "Slow-roasted tomatoes, basil, and fresh mozzarella.", price: 299, veg: true, popular: false, image: "photo-1579751626657-72bc17010498" },
+      { id: "cheese-sticks", name: "Garlic Cheese Sticks", description: "Baked dough sticks with garlic butter and melted cheese.", price: 159, veg: true, popular: false, image: "photo-1579751626657-72bc17010498" },
+    ],
+  },
+  {
+    id: "pizza-pavilion",
+    name: "Pizza Pavilion",
+    cuisine: "Pizza · Calzones · Italian",
+    rating: 4.5,
+    delivery: 34,
+    cost: 420,
+    offer: "20% off on your first order",
+    category: "Pizza",
+    veg: false,
+    image: "photo-1513104890138-7c749659a591",
+    dishes: [
+      { id: "bbq-chicken-pizza", name: "BBQ Chicken Pizza", description: "Smoky barbecue chicken, red onion, and mozzarella.", price: 429, veg: false, popular: true, image: "photo-1513104890138-7c749659a591" },
+      { id: "mushroom-calzone", name: "Mushroom Calzone", description: "Folded pizza filled with mushrooms, ricotta, and herbs.", price: 319, veg: true, popular: true, image: "photo-1571407970349-bc81e7e96d47" },
+      { id: "spicy-salami-pizza", name: "Spicy Salami Pizza", description: "Salami, chilli flakes, tomato sauce, and mozzarella.", price: 449, veg: false, popular: false, image: "photo-1579751626657-72bc17010498" },
+      { id: "pesto-pasta-side", name: "Pesto Pasta Cup", description: "Pasta tossed with basil pesto and shaved parmesan.", price: 229, veg: true, popular: false, image: "photo-1473093295043-cdd812d0e601" },
+    ],
+  },
+  {
+    id: "burger-street",
+    name: "Burger Street",
+    cuisine: "Burgers · American · Shakes",
+    rating: 4.5,
+    delivery: 21,
+    cost: 300,
+    offer: "Free fries with selected burgers",
+    category: "Burgers",
+    veg: false,
+    image: "photo-1568901346375-23c9450c58cd",
+    dishes: [
+      { id: "classic-cheeseburger", name: "Classic Cheeseburger", description: "Grilled beef patty, cheddar, lettuce, and house sauce.", price: 299, veg: false, popular: true, image: "photo-1568901346375-23c9450c58cd" },
+      { id: "spicy-chicken-burger", name: "Spicy Chicken Burger", description: "Crispy chicken, spicy mayo, and crunchy cabbage.", price: 279, veg: false, popular: true, image: "photo-1550547660-d9450f859349" },
+      { id: "mushroom-swiss-burger", name: "Mushroom Swiss Burger", description: "Sautéed mushrooms, Swiss cheese, and a toasted bun.", price: 319, veg: false, popular: false, image: "photo-1568901346375-23c9450c58cd" },
+      { id: "onion-rings", name: "Crispy Onion Rings", description: "Golden battered onion rings with tangy dipping sauce.", price: 139, veg: true, popular: false, image: "photo-1573080496219-bb080dd4f877" },
+    ],
+  },
+  {
+    id: "bun-bros",
+    name: "Bun Bros.",
+    cuisine: "Smash burgers · Sliders · Fries",
+    rating: 4.4,
+    delivery: 18,
+    cost: 280,
+    offer: "Buy 2 sliders, get 1 free",
+    category: "Burgers",
+    veg: true,
+    image: "photo-1550547660-d9450f859349",
+    dishes: [
+      { id: "double-smash-slider", name: "Double Smash Slider", description: "Two thin grilled patties with cheese in a soft bun.", price: 269, veg: false, popular: true, image: "photo-1550547660-d9450f859349" },
+      { id: "crispy-veggie-stack", name: "Crispy Veggie Stack", description: "Crispy vegetable patty with lettuce and tomato relish.", price: 239, veg: true, popular: true, image: "photo-1520072959219-c595dc870360" },
+      { id: "chicken-bacon-burger", name: "Chicken Bacon Burger", description: "Grilled chicken, bacon, cheddar, and smoky mayo.", price: 329, veg: false, popular: false, image: "photo-1568901346375-23c9450c58cd" },
+      { id: "seasoned-fries", name: "Seasoned Fries", description: "Crisp fries tossed with the house savoury seasoning.", price: 129, veg: true, popular: false, image: "photo-1573080496219-bb080dd4f877" },
+    ],
+  },
+  {
+    id: "punjab-pot",
+    name: "Punjab Pot",
+    cuisine: "North Indian · Curries · Tandoor",
+    rating: 4.7,
+    delivery: 30,
+    cost: 360,
+    offer: "Free naan above ₹399",
+    category: "North Indian",
+    veg: false,
+    image: "photo-1585937421612-70a008356fbe",
+    dishes: [
+      { id: "chicken-tikka-masala", name: "Chicken Tikka Masala", description: "Tandoor-grilled chicken in a creamy spiced tomato gravy.", price: 339, veg: false, popular: true, image: "photo-1603894584373-5ac82b2ae398" },
+      { id: "amritsari-chole", name: "Amritsari Chole", description: "Slow-cooked chickpeas with warming Punjabi spices.", price: 229, veg: true, popular: true, image: "photo-1546833999-b9f581a1996d" },
+      { id: "tandoori-chicken", name: "Tandoori Chicken", description: "Yogurt-marinated chicken roasted in a clay oven.", price: 369, veg: false, popular: false, image: "photo-1603894584373-5ac82b2ae398" },
+      { id: "laccha-paratha", name: "Laccha Paratha", description: "Flaky layered bread cooked on a hot griddle.", price: 59, veg: true, popular: false, image: "photo-1585937421612-70a008356fbe" },
+    ],
+  },
+  {
+    id: "curry-leaf-kitchen",
+    name: "Curry Leaf Kitchen",
+    cuisine: "North Indian · Homestyle · Thalis",
+    rating: 4.5,
+    delivery: 27,
+    cost: 290,
+    offer: "15% off homestyle meals",
+    category: "North Indian",
+    veg: true,
+    image: "photo-1546833999-b9f581a1996d",
+    dishes: [
+      { id: "kadai-paneer", name: "Kadai Paneer", description: "Paneer and peppers tossed in a freshly ground masala.", price: 279, veg: true, popular: true, image: "photo-1631452180519-c014fe946bc7" },
+      { id: "rajma-rice", name: "Rajma Chawal", description: "Comforting kidney bean curry served with steamed rice.", price: 199, veg: true, popular: true, image: "photo-1546833999-b9f581a1996d" },
+      { id: "veg-kolhapuri", name: "Vegetable Kolhapuri", description: "Mixed vegetables in a rich, gently spiced curry.", price: 249, veg: true, popular: false, image: "photo-1546833999-b9f581a1996d" },
+      { id: "tandoori-roti", name: "Tandoori Roti", description: "Whole wheat flatbread baked in a traditional tandoor.", price: 39, veg: true, popular: false, image: "photo-1585937421612-70a008356fbe" },
+    ],
+  },
+  {
+    id: "dosa-corner",
+    name: "Dosa Corner",
+    cuisine: "South Indian · Dosa · Chutneys",
+    rating: 4.6,
+    delivery: 22,
+    cost: 210,
+    offer: "Free chutney sampler",
+    category: "South Indian",
+    veg: true,
+    image: "photo-1630383249896-424e482df921",
+    dishes: [
+      { id: "mysore-masala-dosa", name: "Mysore Masala Dosa", description: "Crisp dosa with red chilli chutney and spiced potato.", price: 189, veg: true, popular: true, image: "photo-1630383249896-424e482df921" },
+      { id: "rava-dosa", name: "Crispy Rava Dosa", description: "Lacy semolina dosa with pepper, cumin, and onion.", price: 169, veg: true, popular: true, image: "photo-1630383249896-424e482df921" },
+      { id: "lemon-rice", name: "South Indian Lemon Rice", description: "Fluffy rice tempered with lemon, mustard seeds, and peanuts.", price: 149, veg: true, popular: false, image: "photo-1546833999-b9f581a1996d" },
+      { id: "coconut-chutney-vada", name: "Vada & Coconut Chutney", description: "Crisp lentil vadas served with fresh coconut chutney.", price: 119, veg: true, popular: false, image: "photo-1601050690597-df0568f70950" },
+    ],
+  },
+  {
+    id: "sambar-house",
+    name: "Sambar House",
+    cuisine: "South Indian · Breakfast · Meals",
+    rating: 4.5,
+    delivery: 20,
+    cost: 190,
+    offer: "₹50 off your first order",
+    category: "South Indian",
+    veg: true,
+    image: "photo-1589301760014-d929f3979dbc",
+    dishes: [
+      { id: "soft-idli-plate", name: "Soft Idli Plate", description: "Steamed rice cakes with sambar and two fresh chutneys.", price: 119, veg: true, popular: true, image: "photo-1589301760014-d929f3979dbc" },
+      { id: "bisi-bele-bath", name: "Bisi Bele Bath", description: "A warming rice, lentil, and vegetable dish from Karnataka.", price: 179, veg: true, popular: true, image: "photo-1546833999-b9f581a1996d" },
+      { id: "set-dosa", name: "Set Dosa", description: "A pair of soft, spongy dosas served with vegetable saagu.", price: 149, veg: true, popular: false, image: "photo-1630383249896-424e482df921" },
+      { id: "curd-rice", name: "Tempered Curd Rice", description: "Cool yogurt rice finished with curry leaves and mustard.", price: 129, veg: true, popular: false, image: "photo-1589301760014-d929f3979dbc" },
+    ],
+  },
+  {
+    id: "wok-and-roll",
+    name: "Wok & Roll",
+    cuisine: "Asian · Chinese · Dumplings",
+    rating: 4.5,
+    delivery: 26,
+    cost: 310,
+    offer: "Free spring rolls above ₹399",
+    category: "Asian",
+    veg: false,
+    image: "photo-1563245372-f21724e3856d",
+    dishes: [
+      { id: "chicken-hakka-noodles", name: "Chicken Hakka Noodles", description: "Wok-tossed noodles with chicken and crisp vegetables.", price: 269, veg: false, popular: true, image: "photo-1585032226651-759b368d7246" },
+      { id: "veg-fried-rice", name: "Vegetable Fried Rice", description: "Steamed rice stir-fried with vegetables and spring onion.", price: 219, veg: true, popular: true, image: "photo-1512058564366-18510be2db19" },
+      { id: "chicken-dumplings", name: "Chicken Dumplings", description: "Steamed dumplings with a ginger soy dipping sauce.", price: 239, veg: false, popular: false, image: "photo-1563245372-f21724e3856d" },
+      { id: "chilli-garlic-tofu", name: "Chilli Garlic Tofu", description: "Crisp tofu tossed in a savoury garlic chilli sauce.", price: 249, veg: true, popular: false, image: "photo-1567188040759-fb8a883dc6d8" },
+    ],
+  },
+  {
+    id: "little-bamboo",
+    name: "Little Bamboo",
+    cuisine: "Asian · Japanese · Rice bowls",
+    rating: 4.6,
+    delivery: 29,
+    cost: 380,
+    offer: "Free miso soup with bowls",
+    category: "Asian",
+    veg: true,
+    image: "photo-1512003867696-6d5ce6835040",
+    dishes: [
+      { id: "teriyaki-tofu-bowl", name: "Teriyaki Tofu Bowl", description: "Sticky teriyaki tofu, rice, and fresh steamed greens.", price: 299, veg: true, popular: true, image: "photo-1512621776951-a57141f2eefd" },
+      { id: "vegetable-sushi-roll", name: "Vegetable Sushi Roll", description: "Seasoned rice rolled with cucumber and avocado.", price: 279, veg: true, popular: true, image: "photo-1579871494447-9811cf80d66c" },
+      { id: "miso-ramen", name: "Miso Vegetable Ramen", description: "Noodles in a savoury miso broth with seasonal vegetables.", price: 329, veg: true, popular: false, image: "photo-1569718212165-3a8278d5f624" },
+      { id: "edamame", name: "Sea Salt Edamame", description: "Steamed young soybeans with a pinch of flaky sea salt.", price: 159, veg: true, popular: false, image: "photo-1512621776951-a57141f2eefd" },
+    ],
+  },
+  {
+    id: "fresh-field",
+    name: "Fresh Field",
+    cuisine: "Healthy · Grain bowls · Fresh juices",
+    rating: 4.7,
+    delivery: 23,
+    cost: 310,
+    offer: "Free juice with two bowls",
+    category: "Healthy",
+    veg: true,
+    image: "photo-1512621776951-a57141f2eefd",
+    dishes: [
+      { id: "quinoa-rainbow-bowl", name: "Rainbow Quinoa Bowl", description: "Quinoa, roasted vegetables, greens, and lemon tahini.", price: 329, veg: true, popular: true, image: "photo-1512621776951-a57141f2eefd" },
+      { id: "lentil-avocado-salad", name: "Lentil Avocado Salad", description: "Green lentils, ripe avocado, cucumber, and herbs.", price: 289, veg: true, popular: true, image: "photo-1540420773420-3366772f4999" },
+      { id: "green-goddess-wrap", name: "Green Goddess Wrap", description: "Spinach, hummus, crunchy greens, and herb dressing.", price: 239, veg: true, popular: false, image: "photo-1540420773420-3366772f4999" },
+      { id: "fresh-orange-juice", name: "Fresh Orange Juice", description: "Freshly squeezed oranges served chilled.", price: 149, veg: true, popular: false, image: "photo-1505252585461-04db1eb84625" },
+    ],
+  },
+  {
+    id: "daily-greens",
+    name: "Daily Greens",
+    cuisine: "Healthy · Plant-based · Salads",
+    rating: 4.6,
+    delivery: 25,
+    cost: 290,
+    offer: "15% off plant-based picks",
+    category: "Healthy",
+    veg: true,
+    image: "photo-1540420773420-3366772f4999",
+    dishes: [
+      { id: "roasted-sweet-potato-bowl", name: "Roasted Sweet Potato Bowl", description: "Sweet potato, greens, chickpeas, and a creamy herb dip.", price: 299, veg: true, popular: true, image: "photo-1512621776951-a57141f2eefd" },
+      { id: "classic-hummus-salad", name: "Hummus Garden Salad", description: "Crisp vegetables, house hummus, and warm pita pieces.", price: 259, veg: true, popular: true, image: "photo-1540420773420-3366772f4999" },
+      { id: "tomato-avocado-toast", name: "Tomato Avocado Toast", description: "Sourdough topped with avocado, tomato, and cracked pepper.", price: 229, veg: true, popular: false, image: "photo-1525351484163-7529414344d8" },
+      { id: "pineapple-smoothie", name: "Pineapple Mint Smoothie", description: "Refreshing pineapple blended with mint and yogurt.", price: 169, veg: true, popular: false, image: "photo-1505252585461-04db1eb84625" },
+    ],
+  },
+  {
+    id: "oven-and-icing",
+    name: "Oven & Icing",
+    cuisine: "Desserts · Cookies · Celebration cakes",
+    rating: 4.7,
+    delivery: 28,
+    cost: 280,
+    offer: "Free candle with celebration cakes",
+    category: "Desserts",
+    veg: true,
+    image: "photo-1578985545062-69928b1d9587",
+    dishes: [
+      { id: "vanilla-cupcake-box", name: "Vanilla Cupcake Box", description: "Four fluffy vanilla cupcakes with whipped buttercream.", price: 249, veg: true, popular: true, image: "photo-1578985545062-69928b1d9587" },
+      { id: "double-chocolate-brownie", name: "Double Chocolate Brownie", description: "A rich cocoa brownie with chunks of dark chocolate.", price: 159, veg: true, popular: true, image: "photo-1606313564200-e75d5e30476c" },
+      { id: "butter-shortbread", name: "Butter Shortbread", description: "Crumbly, buttery biscuits baked fresh each morning.", price: 119, veg: true, popular: false, image: "photo-1499636136210-6f4ee915583e" },
+      { id: "mango-cream-cake", name: "Mango Cream Slice", description: "Soft sponge layered with mango cream and fresh fruit.", price: 219, veg: true, popular: false, image: "photo-1578985545062-69928b1d9587" },
+    ],
+  },
+  {
+    id: "sweet-treat-bakery",
+    name: "Sweet Treat Bakery",
+    cuisine: "Desserts · Donuts · Fresh bakes",
+    rating: 4.6,
+    delivery: 24,
+    cost: 230,
+    offer: "Buy 3 donuts, pay for 2",
+    category: "Desserts",
+    veg: true,
+    image: "photo-1551024506-0bccd828d307",
+    dishes: [
+      { id: "glazed-donut", name: "Classic Glazed Donut", description: "Soft, fluffy donut dipped in a light vanilla glaze.", price: 89, veg: true, popular: true, image: "photo-1551024506-0bccd828d307" },
+      { id: "chocolate-eclair", name: "Chocolate Eclair", description: "Choux pastry filled with vanilla cream and chocolate.", price: 149, veg: true, popular: true, image: "photo-1488477181946-6428a0291777" },
+      { id: "apple-pie-slice", name: "Apple Pie Slice", description: "Cinnamon apples baked under a golden flaky crust.", price: 179, veg: true, popular: false, image: "photo-1509440159596-0249088772ff" },
+      { id: "jam-cookie", name: "Raspberry Jam Cookie", description: "Buttery cookie with a bright raspberry jam center.", price: 99, veg: true, popular: false, image: "photo-1499636136210-6f4ee915583e" },
+    ],
+  },
+  {
+    id: "burrito-bay",
+    name: "Burrito Bay",
+    cuisine: "Mexican · Burritos · Rice bowls",
+    rating: 4.6,
+    delivery: 27,
+    cost: 320,
+    offer: "Free chips with every burrito",
+    category: "Mexican",
+    veg: true,
+    image: "photo-1565299585323-38d6b0865b47",
+    dishes: [
+      { id: "chicken-rice-burrito", name: "Chicken Rice Burrito", description: "Grilled chicken, rice, beans, and salsa in a warm tortilla.", price: 299, veg: false, popular: true, image: "photo-1565299585323-38d6b0865b47" },
+      { id: "black-bean-bowl", name: "Black Bean Burrito Bowl", description: "Black beans, rice, corn salsa, and fresh guacamole.", price: 269, veg: true, popular: true, image: "photo-1512621776951-a57141f2eefd" },
+      { id: "cheese-quesadilla", name: "Three Cheese Quesadilla", description: "Toasted tortilla filled with melted cheese and mild salsa.", price: 229, veg: true, popular: false, image: "photo-1565299585323-38d6b0865b47" },
+      { id: "corn-chips-salsa", name: "Corn Chips & Salsa", description: "Crunchy tortilla chips with fresh tomato salsa.", price: 149, veg: true, popular: false, image: "photo-1513456852971-30c0b8199d4d" },
+    ],
+  },
+  {
+    id: "salsa-station",
+    name: "Salsa Station",
+    cuisine: "Mexican · Tacos · Street food",
+    rating: 4.5,
+    delivery: 25,
+    cost: 290,
+    offer: "₹75 off orders above ₹399",
+    category: "Mexican",
+    veg: false,
+    image: "photo-1551504734-5ee1c4a1479b",
+    dishes: [
+      { id: "chicken-street-tacos", name: "Chicken Street Tacos", description: "Three soft tacos with seasoned chicken, onion, and salsa.", price: 279, veg: false, popular: true, image: "photo-1551504734-5ee1c4a1479b" },
+      { id: "roasted-veggie-tacos", name: "Roasted Veggie Tacos", description: "Soft tacos with roasted peppers, beans, and avocado.", price: 229, veg: true, popular: true, image: "photo-1565299585323-38d6b0865b47" },
+      { id: "cheesy-nachos", name: "Cheesy Nachos", description: "Crisp corn chips covered in warm cheese and salsa.", price: 199, veg: true, popular: false, image: "photo-1513456852971-30c0b8199d4d" },
+      { id: "cinnamon-churro-bites", name: "Churro Bites", description: "Warm cinnamon-dusted churros with chocolate dip.", price: 159, veg: true, popular: false, image: "photo-1624371414361-e670edf4898d" },
+    ],
+  },
+  {
+    id: "cacao-craft",
+    name: "Cacao Craft",
+    cuisine: "Chocolate · Fudge · Handmade sweets",
+    rating: 4.8,
+    delivery: 24,
+    cost: 320,
+    offer: "10% off handmade chocolate",
+    category: "Chocolate",
+    veg: true,
+    image: "photo-1511381939415-e44015466834",
+    dishes: [
+      { id: "sea-salt-dark-bar", name: "Sea Salt Dark Chocolate Bar", description: "Bittersweet chocolate finished with flaky sea salt.", price: 199, veg: true, popular: true, image: "photo-1526081347589-7fa3cb41b4b2" },
+      { id: "peanut-butter-cups", name: "Peanut Butter Cups", description: "Creamy peanut butter tucked inside smooth chocolate.", price: 189, veg: true, popular: true, image: "photo-1511381939415-e44015466834" },
+      { id: "chocolate-fudge-squares", name: "Chocolate Fudge Squares", description: "Dense, soft chocolate fudge cut into bite-size squares.", price: 169, veg: true, popular: false, image: "photo-1606313564200-e75d5e30476c" },
+      { id: "white-chocolate-berries", name: "White Chocolate Berries", description: "Sweet white chocolate with a bright dried berry mix.", price: 219, veg: true, popular: false, image: "photo-1526081347589-7fa3cb41b4b2" },
+    ],
+  },
+  {
+    id: "chocolate-house",
+    name: "The Chocolate House",
+    cuisine: "Chocolate · Brownies · Hot cocoa",
+    rating: 4.6,
+    delivery: 22,
+    cost: 270,
+    offer: "Free hot cocoa above ₹399",
+    category: "Chocolate",
+    veg: true,
+    image: "photo-1606313564200-e75d5e30476c",
+    dishes: [
+      { id: "fudgy-walnut-brownie", name: "Fudgy Walnut Brownie", description: "Rich chocolate brownie with toasted walnut pieces.", price: 179, veg: true, popular: true, image: "photo-1606313564200-e75d5e30476c" },
+      { id: "chocolate-dipped-wafer", name: "Chocolate Dipped Wafers", description: "Crisp wafer fingers coated in milk chocolate.", price: 149, veg: true, popular: true, image: "photo-1526081347589-7fa3cb41b4b2" },
+      { id: "hot-cocoa", name: "Classic Hot Cocoa", description: "Warm cocoa made with real chocolate and steamed milk.", price: 159, veg: true, popular: false, image: "photo-1511381939415-e44015466834" },
+      { id: "chocolate-fondant", name: "Chocolate Fondant", description: "Warm chocolate dessert with a soft molten middle.", price: 219, veg: true, popular: false, image: "photo-1606313564200-e75d5e30476c" },
+    ],
+  },
+  {
+    id: "scoop-and-smile",
+    name: "Scoop & Smile",
+    cuisine: "Ice cream · Cones · Sundaes",
+    rating: 4.6,
+    delivery: 18,
+    cost: 210,
+    offer: "Second scoop half price",
+    category: "Ice Cream",
+    veg: true,
+    image: "photo-1560008581-09826d1de69e",
+    dishes: [
+      { id: "cookies-cream-cone", name: "Cookies & Cream Cone", description: "Vanilla ice cream folded with crunchy chocolate cookies.", price: 129, veg: true, popular: true, image: "photo-1560008581-09826d1de69e" },
+      { id: "caramel-pecan-sundae", name: "Caramel Pecan Sundae", description: "Creamy scoops with caramel sauce and toasted pecans.", price: 199, veg: true, popular: true, image: "photo-1563805042-7684c019e1cb" },
+      { id: "lemon-sorbet", name: "Lemon Sorbet", description: "A bright, refreshing dairy-free lemon sorbet.", price: 119, veg: true, popular: false, image: "photo-1501446529957-6226bd447c46" },
+      { id: "chocolate-milkshake", name: "Chocolate Milkshake", description: "Chocolate ice cream blended into a thick chilled shake.", price: 179, veg: true, popular: false, image: "photo-1572490122747-3968b75cc699" },
+    ],
+  },
+  {
+    id: "frozen-fables",
+    name: "Frozen Fables",
+    cuisine: "Ice cream · Gelato · Waffles",
+    rating: 4.7,
+    delivery: 21,
+    cost: 260,
+    offer: "Free waffle with two scoops",
+    category: "Ice Cream",
+    veg: true,
+    image: "photo-1563805042-7684c019e1cb",
+    dishes: [
+      { id: "strawberry-gelato", name: "Strawberry Gelato", description: "Smooth strawberry gelato with real fruit pieces.", price: 149, veg: true, popular: true, image: "photo-1501446529957-6226bd447c46" },
+      { id: "brownie-ice-cream-waffle", name: "Brownie Ice Cream Waffle", description: "Warm waffle topped with brownie bites and vanilla scoops.", price: 249, veg: true, popular: true, image: "photo-1563805042-7684c019e1cb" },
+      { id: "mango-sorbet", name: "Mango Sorbet", description: "Chilled fruit sorbet made with sweet ripe mango.", price: 129, veg: true, popular: false, image: "photo-1501446529957-6226bd447c46" },
+      { id: "mint-chocolate-chip", name: "Mint Chocolate Chip", description: "Cool mint ice cream with dark chocolate chips.", price: 139, veg: true, popular: false, image: "photo-1560008581-09826d1de69e" },
+    ],
+  },
+  {
+    id: "nut-harvest",
+    name: "Nut Harvest",
+    cuisine: "Dry fruits · Roasted nuts · Seeds",
+    rating: 4.6,
+    delivery: 23,
+    cost: 390,
+    offer: "Free snack pouch above ₹499",
+    category: "Dry Fruits",
+    veg: true,
+    image: "photo-1505576399279-565b52d4ac71",
+    dishes: [
+      { id: "salted-pistachios", name: "Salted Pistachios", description: "Roasted pistachios with a light sprinkle of sea salt.", price: 299, veg: true, popular: true, image: "photo-1505576399279-565b52d4ac71" },
+      { id: "dried-apricots", name: "Dried Turkish Apricots", description: "Soft, tangy dried apricots packed for easy snacking.", price: 249, veg: true, popular: true, image: "photo-1490645935967-10de6ba17061" },
+      { id: "pumpkin-sunflower-seeds", name: "Pumpkin & Sunflower Seeds", description: "A crunchy mix of pumpkin and sunflower seeds.", price: 179, veg: true, popular: false, image: "photo-1511499767150-a48a237f0083" },
+      { id: "cranberry-almond-mix", name: "Cranberry Almond Mix", description: "Tart dried cranberries mixed with crunchy almonds.", price: 229, veg: true, popular: false, image: "photo-1490645935967-10de6ba17061" },
+    ],
+  },
+  {
+    id: "dry-fruit-depot",
+    name: "Dry Fruit Depot",
+    cuisine: "Dry fruits · Nuts · Healthy snacks",
+    rating: 4.5,
+    delivery: 25,
+    cost: 370,
+    offer: "12% off snack mixes",
+    category: "Dry Fruits",
+    veg: true,
+    image: "photo-1511499767150-a48a237f0083",
+    dishes: [
+      { id: "whole-kashmiri-walnuts", name: "Kashmiri Walnut Kernels", description: "Crunchy walnut halves, carefully selected and packed.", price: 329, veg: true, popular: true, image: "photo-1505576399279-565b52d4ac71" },
+      { id: "dried-figs", name: "Soft Dried Figs", description: "Naturally sweet dried figs with a tender bite.", price: 279, veg: true, popular: true, image: "photo-1490645935967-10de6ba17061" },
+      { id: "spiced-cashew-mix", name: "Spiced Cashew Mix", description: "Roasted cashews seasoned with a gentle chilli spice.", price: 269, veg: true, popular: false, image: "photo-1505576399279-565b52d4ac71" },
+      { id: "trail-snack-box", name: "Trail Snack Box", description: "Portable portions of raisins, almonds, seeds, and dates.", price: 299, veg: true, popular: false, image: "photo-1511499767150-a48a237f0083" },
+    ],
+  },
 ];
 
 const categories = [
@@ -155,7 +803,156 @@ const categories = [
   { name: "Healthy", icon: "🥗" },
   { name: "Desserts", icon: "🍰" },
   { name: "Mexican", icon: "🌮" },
+  { name: "Chocolate", icon: "🍫" },
+  { name: "Ice Cream", icon: "🍨" },
+  { name: "Dry Fruits", icon: "🥜" },
 ];
+
+const extraDishesByCategory = {
+  Pizza: [
+    { id: "pizza-extra-margherita", name: "Buffalo Margherita Pizza", description: "Buffalo mozzarella, sweet tomato, and fresh basil.", price: 379, veg: true, popular: false, image: "photo-1579751626657-72bc17010498" },
+    { id: "pizza-extra-mediterranean", name: "Mediterranean Olive Pizza", description: "Olives, feta, roasted peppers, and oregano.", price: 399, veg: true, popular: false, image: "photo-1571407970349-bc81e7e96d47" },
+    { id: "pizza-extra-chicken", name: "Tandoori Chicken Pizza", description: "Tandoori chicken, onion, and a creamy cheese blend.", price: 449, veg: false, popular: false, image: "photo-1513104890138-7c749659a591" },
+    { id: "pizza-extra-corn", name: "Sweet Corn & Pepper Pizza", description: "Golden corn, bell peppers, and mozzarella.", price: 329, veg: true, popular: false, image: "photo-1579751626657-72bc17010498" },
+  ],
+  Burgers: [
+    { id: "burger-extra-veggie", name: "Crispy Garden Burger", description: "Crunchy vegetable patty with lettuce and house sauce.", price: 249, veg: true, popular: false, image: "photo-1520072959219-c595dc870360" },
+    { id: "burger-extra-chicken", name: "Grilled Chicken Burger", description: "Juicy grilled chicken, lettuce, and pepper mayo.", price: 299, veg: false, popular: false, image: "photo-1568901346375-23c9450c58cd" },
+    { id: "burger-extra-paneer", name: "Tandoori Paneer Burger", description: "Spiced paneer, crisp onions, and mint dressing.", price: 269, veg: true, popular: false, image: "photo-1520072959219-c595dc870360" },
+    { id: "burger-extra-mushroom", name: "Mushroom Swiss Burger", description: "Sautéed mushrooms and melted Swiss cheese.", price: 319, veg: false, popular: false, image: "photo-1550547660-d9450f859349" },
+  ],
+  "North Indian": [
+    { id: "north-extra-paneer", name: "Palak Paneer", description: "Soft paneer in a gently spiced spinach gravy.", price: 269, veg: true, popular: false, image: "photo-1631452180519-c014fe946bc7" },
+    { id: "north-extra-chicken", name: "Chicken Korma", description: "Tender chicken in a mellow, creamy cashew sauce.", price: 339, veg: false, popular: false, image: "photo-1603894584373-5ac82b2ae398" },
+    { id: "north-extra-dal", name: "Yellow Dal Tadka", description: "Comforting lentils finished with cumin and garlic.", price: 189, veg: true, popular: false, image: "photo-1546833999-b9f581a1996d" },
+    { id: "north-extra-biryani", name: "Vegetable Dum Biryani", description: "Basmati rice layered with vegetables and warming spices.", price: 259, veg: true, popular: false, image: "photo-1563379091339-03246963d51a" },
+  ],
+  "South Indian": [
+    { id: "south-extra-dosa", name: "Plain Crispy Dosa", description: "Golden, crisp rice-and-lentil dosa with coconut chutney.", price: 119, veg: true, popular: false, image: "photo-1630383249896-424e482df921" },
+    { id: "south-extra-idli", name: "Idli & Sambar Combo", description: "Steamed idlis with hearty sambar and fresh chutney.", price: 139, veg: true, popular: false, image: "photo-1589301760014-d929f3979dbc" },
+    { id: "south-extra-uttapam", name: "Tomato Onion Uttapam", description: "Soft savoury pancake topped with tomato and onion.", price: 159, veg: true, popular: false, image: "photo-1630383249896-424e482df921" },
+    { id: "south-extra-vada", name: "Sambar Vada", description: "Crisp lentil vadas served in warm sambar.", price: 129, veg: true, popular: false, image: "photo-1601050690597-df0568f70950" },
+  ],
+  Asian: [
+    { id: "asian-extra-noodles", name: "Chilli Garlic Noodles", description: "Wok-tossed noodles with vegetables and garlic chilli sauce.", price: 239, veg: true, popular: false, image: "photo-1585032226651-759b368d7246" },
+    { id: "asian-extra-rice", name: "Chicken Fried Rice", description: "Wok-fried rice with chicken, egg, and spring onion.", price: 279, veg: false, popular: false, image: "photo-1512058564366-18510be2db19" },
+    { id: "asian-extra-dumplings", name: "Vegetable Dumplings", description: "Steamed vegetable dumplings with ginger soy dip.", price: 189, veg: true, popular: false, image: "photo-1563245372-f21724e3856d" },
+    { id: "asian-extra-curry", name: "Thai Red Curry", description: "Coconut red curry with vegetables and steamed rice.", price: 299, veg: true, popular: false, image: "photo-1547592180-85f173990554" },
+  ],
+  Healthy: [
+    { id: "healthy-extra-quinoa", name: "Quinoa Power Bowl", description: "Quinoa, roasted vegetables, greens, and lemon dressing.", price: 319, veg: true, popular: false, image: "photo-1512621776951-a57141f2eefd" },
+    { id: "healthy-extra-salad", name: "Crunchy Garden Salad", description: "Seasonal greens, cucumber, tomato, and herb vinaigrette.", price: 229, veg: true, popular: false, image: "photo-1540420773420-3366772f4999" },
+    { id: "healthy-extra-wrap", name: "Hummus Veggie Wrap", description: "Fresh vegetables and hummus in a whole-grain wrap.", price: 219, veg: true, popular: false, image: "photo-1540420773420-3366772f4999" },
+    { id: "healthy-extra-smoothie", name: "Berry Banana Smoothie", description: "Mixed berries and banana blended until smooth.", price: 169, veg: true, popular: false, image: "photo-1505252585461-04db1eb84625" },
+  ],
+  Desserts: [
+    { id: "dessert-extra-cake", name: "Chocolate Fudge Cake", description: "Moist chocolate sponge layered with fudge frosting.", price: 229, veg: true, popular: false, image: "photo-1578985545062-69928b1d9587" },
+    { id: "dessert-extra-cookie", name: "Fresh Baked Choc-Chip Cookie", description: "A soft cookie filled with melted chocolate chips.", price: 99, veg: true, popular: false, image: "photo-1499636136210-6f4ee915583e" },
+    { id: "dessert-extra-tart", name: "Seasonal Fruit Tart", description: "Buttery pastry, vanilla cream, and seasonal fruit.", price: 189, veg: true, popular: false, image: "photo-1488477181946-6428a0291777" },
+    { id: "dessert-extra-donut", name: "Chocolate Glazed Donut", description: "A fluffy donut finished with a smooth chocolate glaze.", price: 89, veg: true, popular: false, image: "photo-1551024506-0bccd828d307" },
+  ],
+  Mexican: [
+    { id: "mexican-extra-tacos", name: "Grilled Veggie Tacos", description: "Soft tortillas filled with grilled peppers and salsa.", price: 219, veg: true, popular: false, image: "photo-1551504734-5ee1c4a1479b" },
+    { id: "mexican-extra-burrito", name: "Chicken Burrito", description: "Seasoned chicken, rice, beans, and salsa in a tortilla.", price: 299, veg: false, popular: false, image: "photo-1565299585323-38d6b0865b47" },
+    { id: "mexican-extra-nachos", name: "Cheese & Salsa Nachos", description: "Crisp corn chips with warm cheese and fresh salsa.", price: 189, veg: true, popular: false, image: "photo-1513456852971-30c0b8199d4d" },
+    { id: "mexican-extra-quesadilla", name: "Bean & Cheese Quesadilla", description: "Toasted tortilla filled with black beans and melted cheese.", price: 229, veg: true, popular: false, image: "photo-1565299585323-38d6b0865b47" },
+  ],
+  Chocolate: [
+    { id: "chocolate-extra-truffles", name: "Classic Chocolate Truffles", description: "Rich cocoa-dusted truffles with a silky chocolate center.", price: 229, veg: true, popular: false, image: "photo-1511381939415-e44015466834" },
+    { id: "chocolate-extra-bark", name: "Almond Chocolate Bark", description: "Snappy chocolate topped with crunchy roasted almonds.", price: 199, veg: true, popular: false, image: "photo-1526081347589-7fa3cb41b4b2" },
+    { id: "chocolate-extra-fudge", name: "Walnut Chocolate Fudge", description: "Soft chocolate fudge with toasted walnut pieces.", price: 179, veg: true, popular: false, image: "photo-1606313564200-e75d5e30476c" },
+    { id: "chocolate-extra-cocoa", name: "Creamy Hot Chocolate", description: "A warm cup of smooth drinking chocolate.", price: 149, veg: true, popular: false, image: "photo-1511381939415-e44015466834" },
+  ],
+  "Ice Cream": [
+    { id: "icecream-extra-vanilla", name: "Classic Vanilla Scoop", description: "Creamy vanilla ice cream made with real vanilla.", price: 89, veg: true, popular: false, image: "photo-1560008581-09826d1de69e" },
+    { id: "icecream-extra-sundae", name: "Chocolate Fudge Sundae", description: "Chocolate sauce, vanilla scoops, and crunchy toppings.", price: 179, veg: true, popular: false, image: "photo-1563805042-7684c019e1cb" },
+    { id: "icecream-extra-mango", name: "Mango Sorbet", description: "Cool fruit sorbet made with sweet ripe mango.", price: 119, veg: true, popular: false, image: "photo-1501446529957-6226bd447c46" },
+    { id: "icecream-extra-strawberry", name: "Strawberry Milkshake", description: "A chilled strawberry shake blended with creamy ice cream.", price: 159, veg: true, popular: false, image: "photo-1572490122747-3968b75cc699" },
+  ],
+  "Dry Fruits": [
+    { id: "dryfruit-extra-almonds", name: "Premium Almonds", description: "Crunchy whole almonds packed fresh for snacking.", price: 229, veg: true, popular: false, image: "photo-1505576399279-565b52d4ac71" },
+    { id: "dryfruit-extra-cashews", name: "Roasted Cashews", description: "Golden cashews roasted with a hint of sea salt.", price: 269, veg: true, popular: false, image: "photo-1505576399279-565b52d4ac71" },
+    { id: "dryfruit-extra-apricots", name: "Dried Apricots", description: "Soft, naturally sweet dried apricots for an easy snack.", price: 199, veg: true, popular: false, image: "photo-1490645935967-10de6ba17061" },
+    { id: "dryfruit-extra-trailmix", name: "Everyday Trail Mix", description: "A handy mix of dried fruit, seeds, and crunchy nuts.", price: 179, veg: true, popular: false, image: "photo-1511499767150-a48a237f0083" },
+  ],
+};
+
+function expandRestaurantCatalog() {
+  const generatedRestaurantNames = [
+    "Fresh Plate", "Golden Spoon", "Urban Fork", "Home Table",
+    "Basil & Brick", "Happy Taste", "Local Crave", "Spice Lane",
+    "The Daily Dish", "Market Kitchen", "Simply Served", "The Tasty Spot",
+    "Corner Table", "Flavour House", "Good Food Co.", "Neighbourhood Eats",
+  ];
+
+  for (const category of categories.filter((item) => item.name !== "All")) {
+    const categoryRestaurants = restaurants.filter((restaurant) => restaurant.category === category.name);
+    if (!categoryRestaurants.length) continue;
+
+    const dishPool = [];
+    const dishNames = new Set();
+    for (const restaurant of categoryRestaurants) {
+      for (const dish of restaurant.dishes) {
+        if (dishNames.has(dish.name)) continue;
+        dishNames.add(dish.name);
+        dishPool.push({ dish, sourceId: restaurant.id });
+      }
+    }
+    for (const dish of extraDishesByCategory[category.name]) {
+      if (dishNames.has(dish.name)) continue;
+      dishNames.add(dish.name);
+      dishPool.push({ dish, sourceId: "category-specials" });
+    }
+    let variant = 1;
+    while (dishPool.length < 20) {
+      const { dish } = dishPool[(variant - 1) % dishPool.length];
+      dishPool.push({
+        sourceId: "category-specials",
+        dish: {
+          ...dish,
+          id: `${category.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-house-special-${variant}`,
+          name: `${dish.name} - House Special ${variant}`,
+          description: `${dish.description} Try this house-style variation.`,
+          price: Math.round(dish.price * (1 + (variant % 4) * 0.08)),
+          popular: false,
+        },
+      });
+      variant += 1;
+    }
+
+    for (const restaurant of categoryRestaurants) {
+      const originalDishes = restaurant.dishes;
+      const selectedDishIds = new Set(originalDishes.map((dish) => dish.id));
+      const menu = [...originalDishes];
+      for (const { dish, sourceId } of dishPool) {
+        if (menu.length === 20) break;
+        if (selectedDishIds.has(dish.id)) continue;
+        menu.push({ ...dish, id: `${sourceId}-${dish.id}` });
+        selectedDishIds.add(dish.id);
+      }
+      restaurant.dishes = menu;
+    }
+
+    for (let index = 0; index < generatedRestaurantNames.length; index += 1) {
+      const template = categoryRestaurants[index % categoryRestaurants.length];
+      const id = `more-${category.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${index + 1}`;
+      restaurants.push({
+        ...template,
+        id,
+        name: `${generatedRestaurantNames[index]} ${category.name}`,
+        rating: Math.max(4.2, Math.min(4.9, Number((template.rating + ((index % 5) - 2) * 0.1).toFixed(1)))),
+        delivery: 18 + ((index * 7 + template.delivery) % 20),
+        cost: Math.max(150, template.cost + ((index % 7) - 3) * 25),
+        dishes: dishPool.slice(0, 20).map(({ dish, sourceId }) => ({
+          ...dish,
+          id: `${id}-${sourceId}-${dish.id}`,
+        })),
+      });
+    }
+  }
+}
+
+expandRestaurantCatalog();
 
 const keys = { cart: "crave-cart", favorites: "crave-favorites", location: "crave-location", orders: "crave-orders" };
 
@@ -307,6 +1104,21 @@ function renderCart() {
   $("#grand-total").textContent = money(subtotal + delivery + taxes);
 }
 
+function menuItemControl(key, dishName) {
+  const quantity = state.cart[key] || 0;
+  if (!quantity) {
+    return `<button class="add-item-button" type="button" data-add-item="${key}">ADD <span aria-hidden="true">+</span></button>`;
+  }
+  return `<div class="quantity-control menu-quantity-control"><button type="button" data-quantity="-1" data-key="${key}" aria-label="Remove one ${dishName}">−</button><span aria-live="polite">${quantity}</span><button type="button" data-quantity="1" data-key="${key}" aria-label="Add one ${dishName}">+</button></div>`;
+}
+
+function renderMenuQuantities() {
+  $("#dialog-content").querySelectorAll("[data-menu-key]").forEach((control) => {
+    const dishName = control.closest(".menu-item").querySelector("h4").textContent;
+    control.innerHTML = menuItemControl(control.dataset.menuKey, dishName);
+  });
+}
+
 function showDialog(content) {
   $("#dialog-content").innerHTML = content;
   if (!dialog.open) dialog.showModal();
@@ -324,7 +1136,7 @@ function openRestaurant(restaurantId) {
       <article class="menu-item">
         <div class="menu-item-copy"><span class="veg-mark ${dish.veg ? "" : "non-veg"}" aria-label="${dish.veg ? "Vegetarian" : "Non-vegetarian"}"></span>${dish.popular ? '<span class="popular-label">BESTSELLER</span>' : ""}
           <h4>${dish.name}</h4><strong>${money(dish.price)}</strong><p>${dish.description}</p></div>
-        <div class="menu-item-art"><img src="${foodImage(dish.image, 360)}" alt="" loading="lazy"><button class="add-item-button" type="button" data-add-item="${restaurant.id}:${dish.id}">ADD <span aria-hidden="true">+</span></button></div>
+        <div class="menu-item-art"><img src="${foodImage(dish.image, 360)}" alt="" loading="lazy"><div data-menu-key="${restaurant.id}:${dish.id}">${menuItemControl(`${restaurant.id}:${dish.id}`, dish.name)}</div></div>
       </article>
     `).join("")}</div>`);
 }
@@ -357,6 +1169,7 @@ function addToCart(key) {
   state.cart[key] = (state.cart[key] || 0) + 1;
   saveStorage(keys.cart, state.cart);
   renderCart();
+  renderMenuQuantities();
   showToast("Added to your cart!");
 }
 
@@ -439,7 +1252,93 @@ function resetFilters() {
 }
 
 function openLocationDialog() {
-  showDialog(`<div class="simple-dialog"><p class="section-kicker">FRESH FOOD, RIGHT TO YOU</p><h2 id="dialog-title">Set your location</h2><p>We'll find the best bites near your door.</p><form id="location-form" class="checkout-form"><label>Delivery area<input name="location" type="text" value="${state.location.replace(/[&<>"']/g, "")}" placeholder="Area, city" required minlength="3"></label><button class="primary-button checkout-submit" type="submit">Save location</button></form></div>`);
+  showDialog(`<div class="simple-dialog"><p class="section-kicker">FRESH FOOD, RIGHT TO YOU</p><h2 id="dialog-title">Set your location</h2><p>Use your device location or enter an area.</p><button class="secondary-button location-action" id="use-current-location-button" type="button">Use my current location</button><form id="location-form" class="checkout-form"><label>Delivery area<input name="location" type="text" value="${state.location.replace(/[&<>"']/g, "")}" placeholder="Area, city" required minlength="3"></label><button class="primary-button checkout-submit" type="submit">Save location</button></form></div>`);
+  $("#use-current-location-button").addEventListener("click", (event) => {
+    const button = event.currentTarget;
+    if (!navigator.geolocation) {
+      showToast("Your browser doesn't support location access. Enter your area instead.");
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Finding your location...";
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const location = `Near ${coords.latitude.toFixed(5)}, ${coords.longitude.toFixed(5)}`;
+        state.location = location;
+        $("#current-location").textContent = location;
+        if ($("#use-current-location-button") === button) dialog.close();
+        showToast("Current location selected.");
+        saveStorage(keys.location, state.location);
+      },
+      (error) => {
+        button.disabled = false;
+        button.textContent = "Use my current location";
+        const message = error.code === 1
+          ? "Location permission was denied. Allow access in your browser and try again."
+          : error.code === 3
+            ? "Finding your location timed out. Please try again."
+            : "Your location couldn't be determined. Try again or enter your area.";
+        showToast(message);
+      },
+      { maximumAge: 60000, timeout: 10000 },
+    );
+  });
+}
+
+function openFoodAnalysisDialog() {
+  showDialog(`<div class="simple-dialog"><p class="section-kicker">A LITTLE FOOD FOR THOUGHT</p><h2 id="dialog-title">Ask Gemini about a food</h2><p>Enter a dish or food description to get an AI-generated analysis.</p><form id="food-analysis-form" class="checkout-form"><label>Food item or description<textarea name="food" placeholder="For example: paneer tikka with mint chutney" required minlength="2" maxlength="500"></textarea></label><button class="primary-button checkout-submit" type="submit">Analyze with Gemini</button></form><p class="analysis-note">AI-generated nutrition information is an estimate. Check ingredients and allergens with the restaurant.</p><section class="food-analysis-result hidden" id="food-analysis-result" aria-live="polite"><h3>Gemini's analysis</h3><p id="food-analysis-text"></p></section><p class="food-analysis-status" id="food-analysis-status" role="status" aria-live="polite"></p></div>`);
+  $("#dialog-content textarea[name='food']").focus();
+}
+
+async function analyzeFoodItem(form) {
+  const submitButton = form.querySelector("button[type='submit']");
+  const result = $("#food-analysis-result");
+  const resultText = $("#food-analysis-text");
+  const status = $("#food-analysis-status");
+  submitButton.disabled = true;
+  submitButton.textContent = "Analyzing...";
+  result.classList.add("hidden");
+  resultText.textContent = "";
+  status.textContent = "Asking Gemini...";
+
+  try {
+    const response = await fetch("/api/analyze-food", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ food: new FormData(form).get("food").trim() }),
+    });
+    let data;
+    try {
+      data = await response.json();
+    } catch (error) {
+      if (!response.ok) {
+        throw new Error(response.status === 404
+          ? "Gemini isn't connected yet. Add the secure POST /api/analyze-food backend to enable analysis."
+          : `The analysis service returned an invalid response (${response.status}).`);
+      }
+      throw new Error("The analysis service returned an invalid response.");
+    }
+
+    if (!response.ok) {
+      throw new Error(typeof data?.error === "string" ? data.error : `Gemini analysis failed (${response.status}).`);
+    }
+    if (typeof data?.analysis !== "string" || !data.analysis.trim()) {
+      throw new Error("The analysis service didn't return an analysis. Please try again.");
+    }
+
+    resultText.textContent = data.analysis.trim();
+    result.classList.remove("hidden");
+    status.textContent = "";
+  } catch (error) {
+    console.error("Food analysis request failed.", error);
+    status.textContent = error instanceof Error
+      ? error.message
+      : "Could not analyze this food item. Please try again.";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Analyze with Gemini";
+  }
 }
 
 function openAccountDialog() {
@@ -516,9 +1415,11 @@ $("#all-categories-button").addEventListener("click", () => {
 });
 $("#banner-browse-button").addEventListener("click", () => $("#restaurants").scrollIntoView({ behavior: "smooth" }));
 $("#location-button").addEventListener("click", openLocationDialog);
+$("#food-analysis-button").addEventListener("click", openFoodAnalysisDialog);
 $("#account-button").addEventListener("click", openAccountDialog);
 $("#cart-button").addEventListener("click", openCart);
 $(".close-cart-button").addEventListener("click", closeCart);
+$(".dialog-close").addEventListener("click", () => dialog.close());
 overlay.addEventListener("click", closeCart);
 $("#checkout-button").addEventListener("click", openCheckout);
 $("#footer-help").addEventListener("click", (event) => {
@@ -537,6 +1438,7 @@ document.addEventListener("click", (event) => {
     if (state.cart[key] <= 0) delete state.cart[key];
     saveStorage(keys.cart, state.cart);
     renderCart();
+    renderMenuQuantities();
   }
 
   const replaceButton = event.target.closest("[data-replace-cart]");
@@ -570,14 +1472,15 @@ $("#dialog-content").addEventListener("submit", (event) => {
   event.preventDefault();
   if (!event.target.reportValidity()) return;
   if (event.target.id === "checkout-form") placeOrder(event.target);
+  if (event.target.id === "food-analysis-form") analyzeFoodItem(event.target);
   if (event.target.id === "location-form") {
     const location = new FormData(event.target).get("location").trim();
     if (!location) return;
     state.location = location;
-    saveStorage(keys.location, state.location);
     $("#current-location").textContent = state.location;
     dialog.close();
     showToast("Delivery location updated.");
+    saveStorage(keys.location, state.location);
   }
   if (event.target.id === "account-form") {
     dialog.close();
