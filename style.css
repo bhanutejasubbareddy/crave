@@ -436,6 +436,7 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .flash-product-category { color: #56884d; }
 .flash-product-info h2 { min-height: 36px; margin: 5px 0; font-size: 12px; }
 .flash-product-info p { color: #8a9382; }
+.flash-product-info p.flash-product-native-name { min-height: 1.4em; margin: -2px 0 4px; overflow: visible; color: #64745d; font-family: "Noto Sans Telugu", "Nirmala UI", sans-serif; font-size: 11px; line-height: 1.4; text-overflow: clip; white-space: normal; }
 .flash-product-bottom { margin-top: 13px; }
 .flash-product-bottom > div:first-child { display: grid; grid-template-columns: auto auto; align-items: baseline; gap: 5px; }
 .flash-product-bottom > div:first-child > strong { color: #2e4430; font-size: 13px; }

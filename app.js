@@ -1629,6 +1629,10 @@ function renderFlashProductCard(product) {
       <div class="flash-product-info">
         <span class="flash-product-category">${product.flashCategory === "Fruits" ? "Fresh Fruits" : product.flashCategory === "Vegetables" ? "Fresh Vegetables" : product.flashCategory}</span>
         <h3>${product.name}</h3>
+<<<<<<< HEAD
+=======
+        ${product.teluguName ? `<p class="flash-product-native-name" lang="te">${product.teluguName}</p>` : ""}
+>>>>>>> aaeb565b1a073f0de951c81379539cd1fa5817b8
         <p class="flash-product-meta">${product.weight} <span aria-hidden="true">·</span> 10–15 mins</p>
         <div class="flash-product-bottom"><div><strong>${money(product.price)}</strong><del>${money(product.originalPrice)}</del></div>
           ${quantity
