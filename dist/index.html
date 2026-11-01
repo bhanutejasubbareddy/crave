@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f25736">
+    <meta name="description" content="Discover Hyderabad's favorite restaurants and get the food you crave delivered fast.">
+    <title>Crave — Food that makes your day</title>
+    <script src="app.js?v=20261102-2" defer></script>
+    <script type="module" crossorigin src="/assets/index-Du2ktKSs.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-dUxd3H6y.css">
+  </head>
+  <body>
+    <div id="crave-react-root"></div>
+    <header class="site-header">
+      <a class="brand" id="brand-logo" href="/flash#flash-home" aria-label="Cravr Flash home">cravr<span> flash</span></a>
+      <button class="delivery-location" id="location-button" type="button" aria-label="Change delivery location">
+        <span class="location-pin" aria-hidden="true">⌖</span>
+        <span class="location-copy"><strong>Delivering to</strong><span id="current-location">Indiranagar, Bengaluru</span></span>
+        <span class="location-chevron" aria-hidden="true">⌄</span>
+      </button>
+      <label class="header-search">
+        <span aria-hidden="true">⌕</span>
+        <input id="search-input" type="search" placeholder="Search for fruits, vegetables, chocolates..." autocomplete="off">
+        <kbd>⌘ K</kbd>
+      </label>
+      <div class="header-actions" role="group" aria-label="Account and cart">
+        <a class="flash-home-link" id="flash-button" href="/flash" aria-label="Open Cravr Flash"><span aria-hidden="true">⚡</span> Cravr Flash</a>
+        <nav class="flash-top-nav" aria-label="Store navigation">
+          <a href="/flash#flash-home">Home</a>
+          <a href="/flash#flash-categories">Categories</a>
+          <a href="/flash#flash-best-sellers">Best Sellers</a>
+          <a href="/flash#flash-special-offers">Offers</a>
+          <a href="/flash#flash-contact">Contact</a>
+        </div>
+        <button class="nav-button favorites-nav" id="favorites-button" type="button" aria-label="View restaurant favorites"><span aria-hidden="true">♡</span><span>Favorites</span></button>
+        <button class="nav-button account-button" id="account-button" type="button"><span class="avatar" aria-hidden="true">A</span><span>Login / Sign Up</span></button>
+        <button class="cart-button" id="cart-button" type="button" aria-label="Open your cart"><span aria-hidden="true">▱</span><span>Cart</span><b id="cart-count">0</b></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero page-width" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> GOOD FOOD, GOOD MOOD</div>
+          <h1 id="hero-title">Craving something<br><em>delicious?</em></h1>
+          <p>Discover the best food around you, made with love and brought right to your door. Order now!</p>
+          <div class="hero-search-row">
+            <div class="hero-search">
+              <span aria-hidden="true">⌕</span>
+              <input id="hero-search-input" type="search" placeholder="What are you craving today?" autocomplete="off" aria-label="Search food and restaurants">
+              <button type="button" id="hero-search-button">Find food <span aria-hidden="true">→</span></button>
+            </div>
+            <button type="button" class="food-analysis-link" id="food-analysis-button" aria-label="Ask Gemini to analyze a food item">Ask Gemini <span aria-hidden="true">✦</span></button>
+          </div>
+          <div class="hero-note"><span aria-hidden="true">✦</span> Free delivery on your first order over ₹299</div>
+        </div>
+        <div class="hero-art" aria-label="A table filled with delicious food">
+          <div class="hero-image"></div>
+          <div class="hero-sticker sticker-rating"><span>★</span><span><strong>4.9</strong><small>Food lovers' pick</small></span></div>
+          <div class="hero-sticker sticker-delivery"><span class="delivery-icon">↗</span><span><strong>30 min</strong><small>At your doorstep</small></span></div>
+          <span class="hero-sparkle sparkle-one">✳</span><span class="hero-sparkle sparkle-two">✦</span>
+        </div>
+      </section>
+
+      <section class="flash-catalog page-width" id="flash-page" aria-labelledby="flash-page-title" hidden>
+        <div class="flash-hero-banner" id="flash-home">
+          <div class="flash-hero-copy">
+            <span class="flash-promise"><span aria-hidden="true">⚡</span> FRESH GROCERIES · DELIVERED IN 10–15 MINS</span>
+            <p class="section-kicker">YOUR NEIGHBOURHOOD GROCERY STORE</p>
+            <h1 id="flash-page-title">Groceries delivered<br><em>in minutes!</em></h1>
+            <p>Fresh fruits, vegetables, snacks and everyday essentials, brought to your doorstep before you run out.</p>
+            <a class="flash-shop-link" href="/flash#flash-categories">Shop fresh groceries <span aria-hidden="true">→</span></a>
+            <div class="flash-hero-benefits"><span>✓ Freshness you can trust</span><span>✓ Free delivery over ₹499</span></div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1100&q=85" alt="Fresh colorful fruit and vegetables" fetchpriority="high">
+          <span class="flash-hero-sticker">Picked fresh<br>for your home <span aria-hidden="true">✦</span></span>
+        </div>
+        <div class="section-heading flash-catalog-heading" id="flash-categories">
+          <div><p class="section-kicker">EVERYDAY SHOPPING, MADE EASY</p><h2>Shop by category</h2></div>
+          <span id="flash-item-count" class="filter-result" aria-live="polite"></span>
+        </div>
+        <div class="flash-catalog-filters" id="flash-catalog-filters" role="group" aria-label="Filter Cravr Flash products">
+        </div>
+        <div class="flash-shopping-toolbar" id="flash-products">
+          <label class="flash-sort-label">Sort by
+            <select id="flash-sort" aria-label="Sort products">
+              <option value="recommended">Recommended</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </label>
+          <button class="flash-discount-toggle" id="flash-discount-filter" type="button" aria-pressed="false">％ On sale</button>
+          <span class="flash-toolbar-note">Fresh picks, delivered in 10–15 mins</span>
+        </div>
+        <div id="flash-product-sections" aria-live="polite"></div>
+        <div class="empty-state hidden" id="flash-empty-state"><span aria-hidden="true">🛍️</span><h3>No products found</h3><p>Try a different search or category.</p></div>
+      </section>
+
+      <section class="categories-section page-width" aria-labelledby="category-title">
+        <div class="section-heading">
+          <div><p class="section-kicker">MADE FOR YOUR MOOD</p><h2 id="category-title">What sounds good?</h2></div>
+          <button class="text-link" id="all-categories-button" type="button">See all <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="category-list" id="category-list" aria-label="Filter by food category"></div>
+      </section>
+
+      <section class="restaurant-section page-width" id="restaurants" aria-labelledby="restaurant-title">
+        <div class="section-heading restaurant-heading">
+          <div><p class="section-kicker">LOCAL FAVORITES, JUST FOR YOU</p><h2 id="restaurant-title">Popular near you</h2></div>
+          <label class="sort-label">Sort by
+            <select id="sort-select" aria-label="Sort restaurants">
+              <option value="recommended">Recommended</option>
+              <option value="rating">Top rated</option>
+              <option value="delivery">Fastest delivery</option>
+              <option value="cost-low">Cost: low to high</option>
+            </select>
+          </label>
+        </div>
+        <div class="filter-row" aria-label="Restaurant filters">
+          <button class="filter-chip" id="filter-all" type="button" aria-pressed="true"><span aria-hidden="true">☷</span> Filters</button>
+          <button class="filter-chip" id="filter-veg" type="button" aria-pressed="false"><span class="veg-mark" aria-hidden="true"></span> Pure veg</button>
+          <button class="filter-chip" id="filter-rating" type="button" aria-pressed="false">★ 4.5+</button>
+          <button class="filter-chip" id="filter-offers" type="button" aria-pressed="false"><span aria-hidden="true">%</span> Offers</button>
+          <span class="filter-result" id="result-count"></span>
+        </div>
+        <div class="restaurant-grid" id="restaurant-grid" aria-live="polite"></div>
+        <div class="empty-state hidden" id="empty-state">
+          <span aria-hidden="true">🍽️</span><h3>No bites found just yet</h3><p>Try a different search or clear your filters.</p>
+          <button class="primary-button" id="clear-filters-button" type="button">Clear filters</button>
+        </div>
+      </section>
+
+      <section class="app-banner page-width">
+        <div class="banner-icon" aria-hidden="true">✦</div>
+        <div><p class="section-kicker">A BETTER WAY TO EAT WELL</p><h2>Your next favorite meal<br>is just a tap away.</h2><p>Save your go-to spots and get a little treat with every order.</p></div>
+        <button class="banner-button" id="banner-browse-button" type="button">Explore restaurants <span aria-hidden="true">→</span></button>
+        <span class="banner-decoration" aria-hidden="true">✳</span>
+      </section>
+    </main>
+
+    <footer class="site-footer page-width" id="flash-contact">
+      <div class="flash-footer-brand"><a class="brand footer-brand" href="/flash#flash-home">cravr<span> flash</span></a><p>Fresh groceries, thoughtful prices, and a little more time back in your day.</p></div>
+      <div class="flash-footer-links"><strong>Quick links</strong><a href="/flash#flash-categories">Shop categories</a><a href="/flash#flash-best-sellers">Best sellers</a><a href="/flash#flash-special-offers">Offers</a></div>
+      <div class="flash-footer-links"><strong>Need a hand?</strong><a href="mailto:hello@cravrflash.example">Contact us</a><a href="#" id="footer-help">Customer support</a><span>Privacy · Terms</span><div class="flash-social-links"><a href="https://instagram.com" aria-label="Instagram">Instagram</a><a href="https://facebook.com" aria-label="Facebook">Facebook</a></div></div>
+      <p class="flash-footer-copyright">© 2026 Cravr Flash. Made for your everyday.</p>
+    </footer>
+
+    <div class="overlay hidden" id="overlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Your cart" aria-hidden="true">
+      <div class="drawer-header"><div><p class="section-kicker">YOUR ORDER</p><h2>Your cart <span id="cart-title-count">(0)</span></h2></div><button class="icon-button close-cart-button" type="button" aria-label="Close cart">×</button></div>
+      <div class="cart-content" id="cart-content"></div>
+      <div class="cart-footer hidden" id="cart-footer">
+        <div class="bill-line"><span>Item total</span><span id="item-total">₹0</span></div>
+        <div class="bill-line"><span>Delivery fee</span><span id="delivery-fee">₹0</span></div>
+        <div class="bill-line"><span>Taxes &amp; charges</span><span id="tax-total">₹0</span></div>
+        <div class="bill-line bill-total"><strong>To pay</strong><strong id="grand-total">₹0</strong></div>
+        <button class="primary-button checkout-button" id="checkout-button" type="button">Continue to checkout <span aria-hidden="true">→</span></button>
+        <p class="secure-note">🔒 Secure checkout · Demo order only</p>
+      </div>
+    </aside>
+
+    <dialog class="app-dialog" id="app-dialog" aria-labelledby="dialog-title">
+      <button class="icon-button dialog-close" type="button" aria-label="Close dialog">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

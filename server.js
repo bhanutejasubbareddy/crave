@@ -7,6 +7,7 @@ const apiKey = process.env.GEMINI_API_KEY;
 const maxBodyLength = 4096;
 const staticFiles = {
   "/": ["index.html", "text/html; charset=utf-8"],
+  "/flash": ["index.html", "text/html; charset=utf-8"],
   "/index.html": ["index.html", "text/html; charset=utf-8"],
   "/app.js": ["app.js", "text/javascript; charset=utf-8"],
   "/style.css": ["style.css", "text/css; charset=utf-8"],
@@ -131,7 +132,14 @@ const server = http.createServer(async (request, response) => {
     return;
   }
 
-  const file = staticFiles[requestUrl.pathname];
+  const pathname = requestUrl.pathname.replace(/\/+$/, "") || "/";
+  const vegetableImageMatch = pathname.match(/^\/assets\/flash-vegetables\/([a-z]+(?:-[a-z]+)*\.(?:jpg|png))$/);
+  const file = staticFiles[pathname] || (vegetableImageMatch
+    ? [
+      path.join("assets", "flash-vegetables", vegetableImageMatch[1]),
+      vegetableImageMatch[1].endsWith(".png") ? "image/png" : "image/jpeg",
+    ]
+    : null);
   if (!file) {
     response.writeHead(404);
     response.end("Not found");

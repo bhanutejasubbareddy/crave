@@ -862,37 +862,236 @@ const extraDishesByCategory = {
   ],
 };
 
-const flashVegetableNames = [
-  "Potato", "Tomato", "Onion", "Carrot", "Cabbage", "Cauliflower", "Broccoli", "Spinach", "Brinjal", "Okra",
-  "Cucumber", "Pumpkin", "Bitter Gourd", "Bottle Gourd", "Ridge Gourd", "Snake Gourd", "Drumstick", "Radish", "Beetroot", "Turnip",
-  "Sweet Potato", "Yam", "Taro", "Cassava", "Green Peas", "French Beans", "Cluster Beans", "Broad Beans", "Capsicum", "Green Chilli",
-  "Red Chilli", "Garlic", "Ginger", "Turmeric", "Coriander", "Mint", "Fenugreek", "Lettuce", "Celery", "Asparagus",
-  "Artichoke", "Brussels Sprouts", "Kale", "Leek", "Fennel", "Parsnip", "Zucchini", "Sweet Corn", "Baby Corn", "Mushrooms",
-  "Bok Choy", "Napa Cabbage", "Chinese Broccoli", "Lotus Root", "Bamboo Shoots", "Water Chestnut", "Bean Sprouts", "Chayote", "Kohlrabi", "Swiss Chard",
-  "Arugula", "Watercress", "Mustard Greens", "Amaranth Leaves", "Moringa Leaves", "Pumpkin Leaves", "Cassava Leaves", "Collard Greens", "Dandelion Greens", "Sorrel",
-  "Jicama", "Rutabaga", "Celeriac", "Salsify", "Jerusalem Artichoke", "Burdock Root", "Tinda", "Ivy Gourd", "Ash Gourd", "Raw Banana",
-  "Plantain", "Spring Onion", "Shallots", "Red Cabbage", "Yellow Squash", "Butternut Squash", "Acorn Squash", "Jalapeño", "Poblano Pepper", "Habanero Pepper",
-  "Tomatillo", "Endive", "Chicory", "Romanesco", "Garden Egg", "African Eggplant", "Jute Mallow", "Cowpea Leaves", "Seaweed", "Hearts of Palm",
+const flashCatalogCategories = [
+  { filter: "All items", label: "All items", icon: "✨" },
+  { filter: "Fruits", label: "Fresh Fruits", icon: "🍎" },
+  { filter: "Vegetables", label: "Fresh Vegetables", icon: "🥬" },
+  { filter: "Dry Fruits", label: "Dry Fruits", icon: "🥜" },
+  { filter: "Chocolates", label: "Chocolates", icon: "🍫" },
+  { filter: "Cakes", label: "Cakes", icon: "🍰" },
+  { filter: "Ice Creams", label: "Ice Creams", icon: "🍨" },
+  { filter: "Dairy Products", label: "Dairy Products", icon: "🧀" },
+  { filter: "Milk & Eggs", label: "Milk & Eggs", icon: "🥚" },
+  { filter: "Bakery", label: "Bakery", icon: "🥖" },
+  { filter: "Snacks & Namkeen", label: "Snacks & Namkeen", icon: "🥨" },
+  { filter: "Cold Drinks & Juices", label: "Cold Drinks & Juices", icon: "🧃" },
+  { filter: "Rice & Dals", label: "Rice & Dals", icon: "🍚" },
+  { filter: "Atta & Flour", label: "Atta & Flour", icon: "🌾" },
+  { filter: "Cooking Oil", label: "Cooking Oil", icon: "🫒" },
+  { filter: "Spices & Masalas", label: "Spices & Masalas", icon: "🌶️" },
+  { filter: "Biscuits & Cookies", label: "Biscuits & Cookies", icon: "🍪" },
+  { filter: "Breakfast & Cereals", label: "Breakfast & Cereals", icon: "🥣" },
+  { filter: "Personal Care", label: "Personal Care", icon: "🧴" },
+  { filter: "Household Essentials", label: "Household Essentials", icon: "🏠" },
+  { filter: "Cleaning Products", label: "Cleaning Products", icon: "🧹" },
+  { filter: "Baby Care", label: "Baby Care", icon: "🍼" },
+  { filter: "Frozen Foods", label: "Frozen Foods", icon: "🧊" },
+  { filter: "Sweets & Desserts", label: "Sweets & Desserts", icon: "🍬" },
 ];
+
+const flashVegetableProducts = [
+  { id: "flash-vegetables-2", category: "VEGETABLES", name: "Tomato", teluguName: "టమాటా", image: "/assets/flash-vegetables/tomato.jpg", weight: "500 g", price: 32, originalPrice: 40, discount: "20% OFF" },
+  { id: "flash-vegetables-3", category: "VEGETABLES", name: "Onion", teluguName: "ఉల్లిపాయ", image: "/assets/flash-vegetables/onion.jpg", weight: "1 kg", price: 32, originalPrice: 40, discount: "20% OFF" },
+  { id: "flash-vegetables-1", category: "VEGETABLES", name: "Potato", teluguName: "బంగాళాదుంప", image: "/assets/flash-vegetables/potato.jpg", weight: "1 kg", price: 26, originalPrice: 32, discount: "19% OFF" },
+  { id: "flash-vegetables-9", category: "VEGETABLES", name: "Brinjal", teluguName: "వంకాయ", image: "/assets/flash-vegetables/brinjal.jpg", weight: "500 g", price: 32, originalPrice: 40, discount: "20% OFF" },
+  { id: "flash-vegetables-10", category: "VEGETABLES", name: "Lady Finger", teluguName: "బెండకాయ", image: "/assets/flash-vegetables/lady-finger.jpg", weight: "500 g", price: 36, originalPrice: 45, discount: "20% OFF" },
+  { id: "flash-vegetables-13", category: "VEGETABLES", name: "Bitter Gourd", teluguName: "కాకరకాయ", image: "/assets/flash-vegetables/bitter-gourd.jpg", weight: "500 g", price: 39, originalPrice: 49, discount: "20% OFF" },
+  { id: "flash-vegetables-14", category: "VEGETABLES", name: "Bottle Gourd", teluguName: "సొరకాయ", image: "/assets/flash-vegetables/bottle-gourd.jpg", weight: "1 kg", price: 30, originalPrice: 38, discount: "21% OFF" },
+  { id: "flash-vegetables-15", category: "VEGETABLES", name: "Ridge Gourd", teluguName: "బీరకాయ", image: "/assets/flash-vegetables/ridge-gourd.jpg", weight: "500 g", price: 36, originalPrice: 45, discount: "20% OFF" },
+  { id: "flash-vegetables-16", category: "VEGETABLES", name: "Snake Gourd", teluguName: "పొట్లకాయ", image: "/assets/flash-vegetables/snake-gourd.jpg", weight: "500 g", price: 34, originalPrice: 42, discount: "19% OFF" },
+  { id: "flash-vegetables-17", category: "VEGETABLES", name: "Drumstick", teluguName: "మునగకాయ", image: "/assets/flash-vegetables/drumstick.jpg", weight: "500 g", price: 45, originalPrice: 55, discount: "18% OFF" },
+  { id: "flash-vegetables-4", category: "VEGETABLES", name: "Carrot", teluguName: "క్యారెట్", image: "/assets/flash-vegetables/carrot.jpg", weight: "500 g", price: 36, originalPrice: 45, discount: "20% OFF" },
+  { id: "flash-vegetables-19", category: "VEGETABLES", name: "Beetroot", teluguName: "బీట్‌రూట్", image: "/assets/flash-vegetables/beetroot.jpg", weight: "500 g", price: 34, originalPrice: 42, discount: "19% OFF" },
+  { id: "flash-vegetables-18", category: "VEGETABLES", name: "Radish", teluguName: "ముల్లంగి", image: "/assets/flash-vegetables/radish.jpg", weight: "500 g", price: 28, originalPrice: 35, discount: "20% OFF" },
+  { id: "flash-vegetables-5", category: "VEGETABLES", name: "Cabbage", teluguName: "క్యాబేజీ", image: "/assets/flash-vegetables/cabbage.jpg", weight: "1 kg", price: 29, originalPrice: 36, discount: "19% OFF" },
+  { id: "flash-vegetables-6", category: "VEGETABLES", name: "Cauliflower", teluguName: "కాలీఫ్లవర్", image: "/assets/flash-vegetables/cauliflower.jpg", weight: "500 g", price: 39, originalPrice: 48, discount: "19% OFF" },
+  { id: "flash-vegetables-30", category: "VEGETABLES", name: "Green Chilli", teluguName: "పచ్చిమిర్చి", image: "/assets/flash-vegetables/green-chilli.jpg", weight: "500 g", price: 24, originalPrice: 30, discount: "20% OFF" },
+  { id: "flash-vegetables-35", category: "VEGETABLES", name: "Coriander Leaves", teluguName: "కొత్తిమీర", image: "/assets/flash-vegetables/coriander-leaves.jpg", weight: "500 g", price: 16, originalPrice: 20, discount: "20% OFF" },
+  { id: "flash-vegetables-8", category: "VEGETABLES", name: "Spinach", teluguName: "పాలకూర", image: "/assets/flash-vegetables/spinach.jpg", weight: "500 g", price: 24, originalPrice: 30, discount: "20% OFF" },
+  { id: "flash-vegetables-12", category: "VEGETABLES", name: "Pumpkin", teluguName: "గుమ్మడికాయ", image: "/assets/flash-vegetables/pumpkin.jpg", weight: "1 kg", price: 34, originalPrice: 42, discount: "19% OFF" },
+  { id: "flash-vegetables-27", category: "VEGETABLES", name: "Cluster Beans", teluguName: "గోరుచిక్కుడు", image: "/assets/flash-vegetables/cluster-beans.jpg", weight: "500 g", price: 44, originalPrice: 55, discount: "20% OFF" },
+  { id: "flash-vegetables-78", category: "VEGETABLES", name: "Ivy Gourd", teluguName: "దొండకాయ", image: "/assets/flash-vegetables/ivy-gourd.jpg", weight: "500 g", price: 34, originalPrice: 42, discount: "19% OFF" },
+  { id: "flash-vegetables-11", category: "VEGETABLES", name: "Cucumber", teluguName: "దోసకాయ", image: "/assets/flash-vegetables/cucumber.jpg", weight: "500 g", price: 28, originalPrice: 35, discount: "20% OFF" },
+  { id: "flash-vegetables-21", category: "VEGETABLES", name: "Sweet Potato", teluguName: "చిలగడదుంప", image: "/assets/flash-vegetables/sweet-potato.jpg", weight: "500 g", price: 39, originalPrice: 49, discount: "20% OFF" },
+  { id: "flash-vegetables-25", category: "VEGETABLES", name: "Green Peas", teluguName: "పచ్చి బఠాణీలు", image: "/assets/flash-vegetables/green-peas.jpg", weight: "500 g", price: 55, originalPrice: 69, discount: "20% OFF" },
+  { id: "flash-vegetables-80", category: "VEGETABLES", name: "Raw Banana", teluguName: "అరటికాయ", image: "/assets/flash-vegetables/raw-banana.jpg", weight: "1 kg", price: 29, originalPrice: 36, discount: "19% OFF" },
+  { id: "flash-vegetables-23", category: "VEGETABLES", name: "Taro Root", teluguName: "చామదుంప", image: "/assets/flash-vegetables/taro-root.jpg", weight: "500 g", price: 36, originalPrice: 45, discount: "20% OFF" },
+  { id: "flash-vegetables-29", category: "VEGETABLES", name: "Capsicum", teluguName: "క్యాప్సికమ్", image: "/assets/flash-vegetables/capsicum.jpg", weight: "500 g", price: 47, originalPrice: 59, discount: "20% OFF" },
+  { id: "flash-vegetables-26", category: "VEGETABLES", name: "French Beans", teluguName: "ఫ్రెంచ్ బీన్స్", image: "/assets/flash-vegetables/french-beans.jpg", weight: "500 g", price: 36, originalPrice: 45, discount: "20% OFF" },
+  { id: "flash-vegetables-22", category: "VEGETABLES", name: "Yam", teluguName: "కందగడ్డ", image: "/assets/flash-vegetables/yam.jpg", weight: "500 g", price: 44, originalPrice: 55, discount: "20% OFF" },
+  { id: "flash-vegetable-yellow-pumpkin", category: "VEGETABLES", name: "Yellow Pumpkin", teluguName: "పసుపు గుమ్మడికాయ", image: "/assets/flash-vegetables/yellow-pumpkin.jpg", weight: "1 kg", price: 36, originalPrice: 46, discount: "22% OFF" },
+];
+
+const flashExtraGroceryProducts = [
+  { name: "Fresh Paneer", flashCategory: "Dairy Products", weight: "200 g", price: 79, originalPrice: 89, imageSearchTerm: "fresh paneer cheese" },
+  { name: "Thick Curd", flashCategory: "Dairy Products", weight: "400 g", price: 42, originalPrice: 50, imageSearchTerm: "indian curd yogurt dahi" },
+  { name: "Salted Butter", flashCategory: "Dairy Products", weight: "100 g", price: 54, originalPrice: 60, imageSearchTerm: "butter block dairy" },
+  { name: "Toned Milk", flashCategory: "Milk & Eggs", weight: "1 L", price: 58, originalPrice: 64, imageSearchTerm: "milk bottle glass" },
+  { name: "Farm Fresh Eggs", flashCategory: "Milk & Eggs", weight: "6 pcs", price: 54, originalPrice: 66, imageSearchTerm: "fresh brown eggs carton" },
+  { name: "Whole Wheat Bread", flashCategory: "Bakery", weight: "400 g", price: 42, originalPrice: 50, imageSearchTerm: "whole wheat bread loaf" },
+  { name: "Soft Milk Pav", flashCategory: "Bakery", weight: "6 pcs", price: 35, originalPrice: 42, imageSearchTerm: "fresh bread rolls pav" },
+  { name: "Masala Makhana", flashCategory: "Snacks & Namkeen", weight: "80 g", price: 69, originalPrice: 89, imageSearchTerm: "roasted makhana fox nuts snack" },
+  { name: "Aloo Bhujia", flashCategory: "Snacks & Namkeen", weight: "200 g", price: 48, originalPrice: 55, imageSearchTerm: "indian aloo bhujia namkeen" },
+  { name: "Mango Fruit Drink", flashCategory: "Cold Drinks & Juices", weight: "1 L", price: 95, originalPrice: 110, imageSearchTerm: "mango juice bottle" },
+  { name: "Fresh Orange Juice", flashCategory: "Cold Drinks & Juices", weight: "500 ml", price: 89, originalPrice: 105, imageSearchTerm: "fresh orange juice bottle" },
+  { name: "Sona Masoori Rice", flashCategory: "Rice & Dals", weight: "1 kg", price: 79, originalPrice: 92, imageSearchTerm: "sona masoori rice grains" },
+  { name: "Toor Dal", flashCategory: "Rice & Dals", weight: "1 kg", price: 139, originalPrice: 159, imageSearchTerm: "toor dal pigeon peas lentils" },
+  { name: "Chakki Fresh Atta", flashCategory: "Atta & Flour", weight: "1 kg", price: 54, originalPrice: 62, imageSearchTerm: "whole wheat flour atta" },
+  { name: "Besan Gram Flour", flashCategory: "Atta & Flour", weight: "500 g", price: 49, originalPrice: 58, imageSearchTerm: "gram flour besan bowl" },
+  { name: "Sunflower Cooking Oil", flashCategory: "Cooking Oil", weight: "1 L", price: 139, originalPrice: 159, imageSearchTerm: "sunflower cooking oil bottle" },
+  { name: "Cold Pressed Groundnut Oil", flashCategory: "Cooking Oil", weight: "1 L", price: 189, originalPrice: 215, imageSearchTerm: "groundnut oil bottle peanuts" },
+  { name: "Turmeric Powder", flashCategory: "Spices & Masalas", weight: "100 g", price: 34, originalPrice: 40, imageSearchTerm: "turmeric powder spice" },
+  { name: "Garam Masala", flashCategory: "Spices & Masalas", weight: "100 g", price: 59, originalPrice: 69, imageSearchTerm: "garam masala spice powder" },
+  { name: "Classic Marie Biscuits", flashCategory: "Biscuits & Cookies", weight: "250 g", price: 34, originalPrice: 40, imageSearchTerm: "marie biscuits cookies" },
+  { name: "Choco Chip Cookies", flashCategory: "Biscuits & Cookies", weight: "150 g", price: 69, originalPrice: 80, imageSearchTerm: "chocolate chip cookies" },
+  { name: "Fruit & Nut Muesli", flashCategory: "Breakfast & Cereals", weight: "400 g", price: 179, originalPrice: 210, imageSearchTerm: "fruit nut muesli cereal bowl" },
+  { name: "Crunchy Corn Flakes", flashCategory: "Breakfast & Cereals", weight: "500 g", price: 129, originalPrice: 149, imageSearchTerm: "corn flakes breakfast cereal" },
+  { name: "Aloe Vera Body Wash", flashCategory: "Personal Care", weight: "250 ml", price: 129, originalPrice: 149, imageSearchTerm: "aloe vera body wash bottle" },
+  { name: "Nourishing Shampoo", flashCategory: "Personal Care", weight: "340 ml", price: 179, originalPrice: 205, imageSearchTerm: "shampoo bottle personal care" },
+  { name: "Soft Facial Tissues", flashCategory: "Household Essentials", weight: "1 pack", price: 49, originalPrice: 59, imageSearchTerm: "facial tissues box" },
+  { name: "Kitchen Paper Towels", flashCategory: "Household Essentials", weight: "2 rolls", price: 89, originalPrice: 105, imageSearchTerm: "kitchen paper towels rolls" },
+  { name: "Lemon Floor Cleaner", flashCategory: "Cleaning Products", weight: "1 L", price: 115, originalPrice: 135, imageSearchTerm: "floor cleaner bottle" },
+  { name: "Dishwash Liquid", flashCategory: "Cleaning Products", weight: "500 ml", price: 99, originalPrice: 115, imageSearchTerm: "dishwashing liquid bottle" },
+  { name: "Baby Diaper Pants", flashCategory: "Baby Care", weight: "5 pcs", price: 149, originalPrice: 175, imageSearchTerm: "baby diaper pants pack" },
+  { name: "Gentle Baby Wipes", flashCategory: "Baby Care", weight: "72 wipes", price: 99, originalPrice: 115, imageSearchTerm: "baby wipes pack" },
+  { name: "Frozen Green Peas", flashCategory: "Frozen Foods", weight: "500 g", price: 79, originalPrice: 95, imageSearchTerm: "frozen green peas bag" },
+  { name: "Veggie Nuggets", flashCategory: "Frozen Foods", weight: "250 g", price: 119, originalPrice: 139, imageSearchTerm: "frozen vegetable nuggets" },
+  { name: "Gulab Jamun", flashCategory: "Sweets & Desserts", weight: "250 g", price: 99, originalPrice: 115, imageSearchTerm: "indian gulab jamun dessert" },
+  { name: "Kaju Katli", flashCategory: "Sweets & Desserts", weight: "200 g", price: 179, originalPrice: 205, imageSearchTerm: "kaju katli indian sweet" },
+].map((product, index) => ({
+  ...product,
+  id: `flash-grocery-${product.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+  description: `${product.name}, carefully selected for your home.`,
+  veg: true,
+  image: "",
+  bestseller: index < 8,
+  recentlyAdded: index >= 30,
+}));
 
 const flashFruitNames = [
   "Apple", "Banana", "Mango", "Orange", "Grapes", "Watermelon", "Papaya", "Pineapple", "Pomegranate", "Guava",
-  "Pear", "Peach", "Plum", "Nectarine", "Apricot", "Cherry", "Strawberry", "Blueberry", "Raspberry", "Blackberry",
-  "Cranberry", "Mulberry", "Kiwi", "Avocado", "Coconut", "Lemon", "Lime", "Sweet Lime", "Grapefruit", "Dragon Fruit",
-  "Passion Fruit", "Star Fruit", "Jackfruit", "Lychee", "Rambutan", "Longan", "Mangosteen", "Durian", "Persimmon", "Fig",
-  "Dates", "Custard Apple", "Sapodilla", "Indian Gooseberry", "Jamun", "Wood Apple", "Bael", "Tamarind", "Cape Gooseberry", "Soursop",
-  "Breadfruit", "Quince", "Cantaloupe", "Honeydew Melon", "Muskmelon", "Kiwano", "Pomelo", "Clementine", "Mandarin", "Tangerine",
-  "Blood Orange", "Kumquat", "Yuzu", "Ugli Fruit", "Loquat", "Medlar", "Elderberry", "Boysenberry", "Gooseberry", "Jujube",
-  "Miracle Fruit", "Ackee", "Salak", "Feijoa", "Jabuticaba", "Acerola", "Red Currant", "Black Currant", "Plantain", "Olive",
+  "Pear", "Sweet Lime", "Dragon Fruit", "Jackfruit", "Lychee", "Coconut", "Lemon", "Custard Apple", "Sapodilla", "Jamun",
+  "Muskmelon", "Indian Gooseberry", "Dates", "Kiwi",
 ];
 
-const flashFruitImages = [
-  "photo-1610832958506-aa56368176cf",
-  "photo-1547514701-42782101795e",
-  "photo-1571771894821-ce9b6c11b08e",
-  "photo-1550258987-190a2d5a0fe7",
-  "photo-1596591606975-97ee5cef3a1e",
-];
+const flashImageSearchTerms = {
+  Apple: "fresh red apples fruit",
+  Banana: "fresh yellow bananas",
+  Mango: "indian mango fruit",
+  Orange: "fresh oranges fruit",
+  Grapes: "fresh grapes bunch",
+  Watermelon: "whole fresh watermelon",
+  Papaya: "fresh papaya fruit",
+  Pineapple: "whole pineapple fruit",
+  Pomegranate: "fresh pomegranate fruit",
+  Guava: "fresh guava fruit",
+  Pear: "fresh green pears",
+  "Sweet Lime": "mosambi sweet lime fruit",
+  "Dragon Fruit": "fresh dragon fruit",
+  Jackfruit: "whole jackfruit fruit",
+  Lychee: "fresh lychee fruit",
+  Coconut: "fresh coconut fruit",
+  Lemon: "fresh lemons",
+  "Custard Apple": "custard apple sitaphal fruit",
+  Sapodilla: "chikoo sapodilla fruit",
+  Jamun: "indian jamun black plum fruit",
+  Muskmelon: "indian muskmelon fruit",
+  "Indian Gooseberry": "amla indian gooseberry fruit",
+  Dates: "fresh dates fruit",
+  Kiwi: "fresh kiwi fruit",
+  Potato: "raw potatoes",
+  Tomato: "fresh tomatoes",
+  Onion: "whole onions",
+  Carrot: "fresh carrots",
+  Cabbage: "whole cabbage",
+  Cauliflower: "fresh cauliflower head",
+  Broccoli: "broccoli florets vegetable",
+  Spinach: "spinach leaves",
+  "Sweet Potato": "purple sweet potatoes",
+  Yam: "yam tuber vegetable",
+  Taro: "taro root vegetable",
+  Cassava: "cassava root tuber",
+  "Green Peas": "green pea pods",
+  "French Beans": "green french beans pods",
+  "Cluster Beans": "cluster beans vegetable",
+  "Broad Beans": "broad bean pods fava",
+  Brinjal: "eggplant",
+  Okra: "okra",
+  Cucumber: "cucumber",
+  Pumpkin: "orange green pumpkin",
+  "Bitter Gourd": "green bitter gourd",
+  "Bottle Gourd": "green bottle gourd",
+  "Ridge Gourd": "green ridge gourd",
+  "Snake Gourd": "long green snake gourd",
+  Fenugreek: "fenugreek leaves",
+  Lettuce: "fresh green lettuce",
+  Celery: "green celery stalks",
+  Asparagus: "green asparagus spears",
+  Artichoke: "green globe artichoke",
+  "Brussels Sprouts": "fresh brussels sprouts",
+  Kale: "curly kale leaves",
+  Leek: "fresh leek stalks",
+  "Chinese Broccoli": "gai lan chinese broccoli",
+  "Lotus Root": "sliced lotus root",
+  "Bamboo Shoots": "fresh bamboo shoots",
+  "Water Chestnut": "fresh water chestnuts",
+  "Bean Sprouts": "fresh bean sprouts",
+  Chayote: "green chayote squash",
+  Kohlrabi: "green kohlrabi vegetable",
+  "Swiss Chard": "fresh swiss chard leaves",
+  Arugula: "fresh arugula leaves",
+  Watercress: "fresh watercress leaves",
+  "Mustard Greens": "fresh mustard greens",
+  "Amaranth Leaves": "fresh amaranth leaves",
+  "Moringa Leaves": "fresh moringa leaves",
+  "Pumpkin Leaves": "fresh pumpkin leaves",
+  "Cassava Leaves": "fresh cassava leaves",
+  "Collard Greens": "fresh collard greens",
+  Plantain: "green cooking plantain bananas",
+  "Spring Onion": "fresh spring onions scallions",
+  Shallots: "fresh shallots",
+  "Red Cabbage": "whole red cabbage",
+  "Yellow Squash": "yellow summer squash",
+  "Butternut Squash": "whole butternut squash",
+  "Acorn Squash": "green acorn squash",
+  Jalapeño: "fresh green jalapeno peppers",
+  "Poblano Pepper": "fresh poblano peppers",
+  "Habanero Pepper": "fresh habanero peppers",
+  Tomatillo: "fresh husked green tomatillos",
+  Endive: "fresh endive heads",
+  "Dandelion Greens": "fresh dandelion greens leaves",
+  Sorrel: "fresh sorrel leaves",
+  Jicama: "whole jicama root",
+  Rutabaga: "whole rutabaga root",
+  "Mint Chocolate Chip": "mint chocolate chip ice cream",
+  "Chocolate Truffle Box": "assorted chocolate truffles box",
+  "Hazelnut Chocolate Bar": "hazelnut chocolate bar",
+  "Chocolate Lava Cake": "chocolate lava cake molten center",
+};
+
+const flashImageFallbackTerms = {
+  "Sweet Potato": "sweet potato",
+  Yam: "yam root",
+  Taro: "taro root",
+  Cassava: "cassava root",
+  "Green Peas": "peas pods",
+  "French Beans": "french beans",
+  "Cluster Beans": "cluster bean",
+  "Broad Beans": "broad beans pods",
+  Brinjal: "aubergine",
+  Okra: "lady fingers okra",
+  Cucumber: "green cucumbers",
+  Pumpkin: "pumpkin vegetable",
+  "Bitter Gourd": "bitter gourd",
+  "Bottle Gourd": "bottle gourd",
+  "Ridge Gourd": "ridge gourd",
+  "Snake Gourd": "snake gourd",
+  Fenugreek: "methi leaves",
+  "Mint Chocolate Chip": "mint chocolate chip ice cream",
+  "Chocolate Truffle Box": "chocolate truffle assortment",
+  "Hazelnut Chocolate Bar": "chocolate hazelnut bar",
+  "Chocolate Lava Cake": "molten chocolate cake",
+};
 
 function expandRestaurantCatalog() {
   const generatedRestaurantNames = [
@@ -997,15 +1196,14 @@ const flashDryFruitProducts = [...new Map(
 ).values()];
 
 const flashProductsByCategory = [
-  ...flashVegetableNames.map((name, index) => ({
-    id: `vegetable-${index + 1}`,
-    name,
-    description: `Fresh ${name.toLowerCase()}, picked for your kitchen.`,
-    price: 39 + (index % 6) * 5,
+  ...flashVegetableProducts.map((product, index) => ({
+    ...product,
+    description: `Fresh ${product.name.toLowerCase()}, picked for your kitchen.`,
     veg: true,
-    image: "photo-1512621776951-a57141f2eefd",
     flashCategory: "Vegetables",
-    quantityLabel: index % 3 === 0 ? "1 kg" : "500 g",
+    quantityLabel: product.weight,
+    bestseller: index < 6,
+    recentlyAdded: index >= 26,
   })),
   ...flashFruitNames.map((name, index) => ({
     id: `fruit-${index + 1}`,
@@ -1013,10 +1211,13 @@ const flashProductsByCategory = [
     description: `Sweet, fresh ${name.toLowerCase()} ready to enjoy.`,
     price: 49 + (index % 8) * 10,
     veg: true,
-    image: flashFruitImages[index % flashFruitImages.length],
+    image: "",
     flashCategory: "Fruits",
     quantityLabel: index % 3 === 0 ? "1 kg" : "500 g",
+    bestseller: index < 8,
+    recentlyAdded: index >= flashFruitNames.length - 6,
   })),
+  ...flashExtraGroceryProducts,
   ...flashDryFruitProducts.map((dish, index) => ({
     ...dish,
     flashCategory: "Dry Fruits",
@@ -1038,11 +1239,25 @@ const flashProductsByCategory = [
 ];
 const flashProducts = [...new Map(
   flashProductsByCategory.map((product) => [`${product.flashCategory}:${product.name}`, product]),
-).values()].map((product, index) => ({
-  ...product,
-  id: `flash-${product.flashCategory.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${index + 1}`,
-  discount: 10 + (index % 4) * 5,
-}));
+).values()].map((product, index) => {
+  const discountPercent = product.discountPercent
+    ?? (Math.round((1 - product.price / (product.originalPrice || product.price)) * 100)
+      || 10 + (index % 4) * 5);
+  const originalPrice = product.originalPrice ?? product.price;
+  return {
+    ...product,
+    id: product.id || `flash-${product.flashCategory.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${index + 71}`,
+    category: product.category || product.flashCategory.toUpperCase(),
+    image: product.image || "",
+    imageSearchTerm: product.imageSearchTerm || flashImageSearchTerms[product.name] || product.name,
+    imageFallbackSearchTerm: flashImageFallbackTerms[product.name] || `${product.name} ${product.flashCategory.toLowerCase()}`,
+    weight: product.weight || product.quantityLabel,
+    price: product.discount ? product.price : Math.round(originalPrice * (100 - discountPercent) / 100),
+    originalPrice,
+    discountPercent,
+    discount: product.discount || `${discountPercent}% OFF`,
+  };
+});
 
 for (let index = restaurants.length - 1; index >= 0; index -= 1) {
   if (["Chocolate", "Ice Cream", "Dry Fruits"].includes(restaurants[index].category)) {
@@ -1065,25 +1280,7 @@ restaurants.push({
   dishes: flashProducts,
 });
 
-const vegetablePhotoIds = [
-  36400786, 29479888, 17140078, 1306559, 6316537, 6631953, 7676071, 28524414, 34096648, 38285914,
-  39490165, 39467457, 10487659, 29181513, 31080486, 9704414, 20371247, 31056129, 6740689, 6631952,
-  19897797, 33383280, 37408655, 17446132, 3650647, 13195446, 9030135, 38938579, 7342136, 38192931,
-  2880693, 38802742, 24916930, 11172118, 30890190, 39795133, 40209261, 33749230, 39815348, 33499935,
-  30309038, 30309037, 11611992, 34993617, 5503106, 38990977, 8024002, 7657028, 35975200, 1433487,
-  32667567, 6576148, 3938343, 36762410, 27643476, 39074069, 20308756, 12407410, 144206, 4163411,
-  7392730, 7333168, 4309708, 6316541, 4163410, 38088072, 13982572, 13982567, 13982570, 34705704,
-  10448740, 12181050, 7225537, 5041567, 7129162, 12296938, 12118672, 533342, 12296937, 36895504,
-  4307386, 31514958, 4110464, 7774212, 15428958, 17617617, 4414872, 6037886, 38308469, 27567600,
-  27961865, 32489640, 11633655, 30624993, 27791127, 40207161, 37540986, 34295170, 38341721, 15002300,
-];
-
-function vegetableImage(index) {
-  const photoId = vegetablePhotoIds[index % vegetablePhotoIds.length];
-  return `https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=640`;
-}
-
-const keys = { cart: "crave-cart", favorites: "crave-favorites", location: "crave-location", orders: "crave-orders" };
+const keys = { cart: "crave-cart", favorites: "crave-favorites", location: "crave-location", orders: "crave-orders", account: "crave-account", addresses: "crave-addresses", wishlist: "crave-wishlist" };
 
 function readStorage(key, fallback) {
   try {
@@ -1099,9 +1296,16 @@ const state = {
   cart: readStorage(keys.cart, {}),
   favorites: readStorage(keys.favorites, []),
   orders: readStorage(keys.orders, []),
+  account: readStorage(keys.account, null),
+  addresses: readStorage(keys.addresses, []),
+  wishlist: readStorage(keys.wishlist, []),
   location: readStorage(keys.location, "Indiranagar, Bengaluru"),
   category: "All",
   flashCategory: null,
+  flashStoreCategory: "All items",
+  flashShelfFilter: null,
+  flashSort: "recommended",
+  flashOffersOnly: false,
   query: "",
   vegOnly: false,
   topRated: false,
@@ -1115,6 +1319,20 @@ const $ = (selector) => document.querySelector(selector);
 const restaurantGrid = $("#restaurant-grid");
 const dialog = $("#app-dialog");
 const overlay = $("#overlay");
+const flashImagePromises = new Map();
+const usedFlashImageUrls = new Map();
+let nextFlashImageSearchAt = 0;
+let flashImageSearchQueue = Promise.resolve();
+const flashImageObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      const product = flashProducts.find((item) => item.id === entry.target.dataset.flashProductImage);
+      if (product) loadFlashProductImage(entry.target, product);
+    });
+  }, { rootMargin: "100px" })
+  : null;
 
 function saveStorage(key, value) {
   try {
@@ -1129,8 +1347,30 @@ function money(amount) {
   return `₹${Math.round(amount).toLocaleString("en-IN")}`;
 }
 
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  })[character]);
+}
+
 function foodImage(id, width = 700) {
   return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=80`;
+}
+
+function flashImagePlaceholder(productName) {
+  const safeName = productName.replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;",
+  })[character]);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400"><rect width="640" height="400" fill="#f5f0e9"/><text x="320" y="205" fill="#89847e" font-family="sans-serif" font-size="24" text-anchor="middle">${safeName}</text></svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
 }
 
 function showToast(message) {
@@ -1139,6 +1379,158 @@ function showToast(message) {
   toast.classList.add("visible");
   window.clearTimeout(showToast.timeout);
   showToast.timeout = window.setTimeout(() => toast.classList.remove("visible"), 2600);
+}
+
+function commonsImageSearchUrl(searchTerm) {
+  const url = new URL("https://commons.wikimedia.org/w/api.php");
+  url.searchParams.set("action", "query");
+  url.searchParams.set("generator", "search");
+  url.searchParams.set("gsrsearch", `filetype:bitmap ${searchTerm}`);
+  url.searchParams.set("gsrnamespace", "6");
+  url.searchParams.set("gsrlimit", "20");
+  url.searchParams.set("prop", "imageinfo");
+  url.searchParams.set("iiprop", "url");
+  url.searchParams.set("iiurlwidth", "640");
+  url.searchParams.set("format", "json");
+  url.searchParams.set("origin", "*");
+  return url;
+}
+
+function searchCommonsForProduct(searchTerm) {
+  const search = flashImageSearchQueue.then(async () => {
+    const wait = Math.max(0, nextFlashImageSearchAt - Date.now());
+    if (wait) await new Promise((resolve) => window.setTimeout(resolve, wait));
+    nextFlashImageSearchAt = Date.now() + 350;
+    return fetch(commonsImageSearchUrl(searchTerm));
+  });
+  flashImageSearchQueue = search.catch(() => {});
+  return search;
+}
+
+async function findFlashProductImage(product, searchTerm, excludedUrl = "") {
+  const response = await searchCommonsForProduct(searchTerm);
+  if (!response.ok) throw new Error(`Image search failed (${response.status}).`);
+
+  const result = await response.json();
+  const pages = Object.values(result.query?.pages || {});
+  const searchPhrase = searchTerm.toLowerCase();
+  const searchWords = searchPhrase.split(/[^a-z0-9]+/).filter((word) => word.length > 2);
+  const candidates = pages
+    .map((page) => ({
+      title: page.title.toLowerCase(),
+      url: page.imageinfo?.[0]?.thumburl,
+    }))
+    .filter(({ title, url }) => url
+      && url !== excludedUrl
+      && (!usedFlashImageUrls.has(url) || usedFlashImageUrls.get(url) === product.id)
+      && !/\b(collage|illustration|diagram|logo|icon)\b/.test(title)
+      && (product.category !== "VEGETABLES"
+        || !/\b(salad|bhaji|curry|sauce|recipe|boiled|roasted|fried|grilled|cooked|mixed|assorted|market|shop|yoghurt|yogurt|dressing|dip|soup|pickle|pickled|butterfly|caterpillar|insect|pest|species|karyotype|taxonomy|flower|blossom|etc)\b|\b(with|and|plant)\b|,\s*/.test(title)))
+    .map((candidate) => ({
+      ...candidate,
+      score: (candidate.title.split(/[,.]/, 1)[0].includes(searchPhrase) ? 100 : 0)
+        + (candidate.title.includes(searchPhrase) ? 50 : 0)
+        + searchWords.filter((word) => candidate.title.includes(word)).length * 10,
+    }))
+    .filter((candidate) => candidate.score >= 20)
+    .sort((first, second) => second.score - first.score);
+
+  return candidates[0]?.url || "";
+}
+
+function loadFlashProductImage(image, product, retry = false, excludedUrl = "") {
+  const cacheKey = retry ? `${product.id}:retry` : product.id;
+  const cachedImage = !retry && product.image;
+  if (cachedImage && (!usedFlashImageUrls.has(cachedImage) || usedFlashImageUrls.get(cachedImage) === product.id)) {
+    usedFlashImageUrls.set(cachedImage, product.id);
+    image.src = cachedImage;
+    return;
+  }
+
+  if (flashImagePromises.has(cacheKey)) {
+    flashImagePromises.get(cacheKey).then((url) => {
+      if (url && image.isConnected) image.src = url;
+    });
+    return;
+  }
+
+  const promise = (async () => {
+    let url = "";
+    try {
+      const searchTerm = retry ? product.imageFallbackSearchTerm : product.imageSearchTerm;
+      url = await findFlashProductImage(product, searchTerm, excludedUrl);
+    } catch (error) {
+      console.error(`Image lookup failed for ${product.name}.`, error);
+    }
+
+    if (!url && !retry && product.imageFallbackSearchTerm !== product.imageSearchTerm) {
+      try {
+        url = await findFlashProductImage(product, product.imageFallbackSearchTerm, excludedUrl);
+      } catch (error) {
+        console.error(`Fallback image lookup failed for ${product.name}.`, error);
+      }
+    }
+
+    if (url) {
+      usedFlashImageUrls.set(url, product.id);
+      product.image = url;
+    } else {
+      console.warn(`No unique matching image was found for ${product.name}.`);
+    }
+    return url;
+  })();
+
+  flashImagePromises.set(cacheKey, promise);
+  promise.then((url) => {
+    if (url && image.isConnected) image.src = url;
+  });
+}
+
+function currentRoute() {
+  const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+  return pathname === "/flash" || new URLSearchParams(window.location.search).get("view") === "flash"
+    ? "/flash"
+    : "/";
+}
+
+function renderRoute() {
+  const route = currentRoute();
+  const isFlashPage = route === "/flash";
+  if (isFlashPage && window.location.pathname !== "/flash") {
+    window.history.replaceState({}, "", `/flash${window.location.hash}`);
+  }
+
+  document.body.classList.toggle("flash-page-mode", isFlashPage);
+  $("#flash-page").hidden = !isFlashPage;
+  if (isFlashPage) $("#flash-button").setAttribute("aria-current", "page");
+  else $("#flash-button").removeAttribute("aria-current");
+  document.title = isFlashPage
+    ? "Cravy Flash - Delivered in 10–15 minutes"
+    : "Cravy - Food delivery, made delightful";
+  $("#search-input").placeholder = isFlashPage
+    ? "Search for fruits, vegetables, chocolates..."
+    : "Search for dishes or restaurants";
+  $(".header-search kbd").classList.toggle("hidden", isFlashPage);
+
+  if (isFlashPage) renderFlashCatalog();
+
+  if (window.location.hash) {
+    requestAnimationFrame(() => {
+      document.getElementById(decodeURIComponent(window.location.hash.slice(1)))
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  } else {
+    window.scrollTo(0, 0);
+  }
+}
+
+function navigateTo(url) {
+  const target = new URL(url, window.location.href);
+  const pathname = target.pathname.replace(/\/+$/, "") || "/";
+  if (target.origin !== window.location.origin || !["/", "/flash"].includes(pathname)) return;
+
+  window.history.pushState({}, "", `${pathname}${target.search}${target.hash}`);
+  renderRoute();
 }
 
 function renderCategories() {
@@ -1201,7 +1593,7 @@ function renderRestaurants() {
           <span class="restaurant-meta"><span>${money(restaurant.cost)} for two</span><span class="meta-dot">·</span><span>${restaurant.veg ? "Pure veg" : "Popular pick"}</span></span>
         </button>
         <div class="restaurant-dish-preview">
-          <img src="${foodImage(dish.image, 180)}" alt="" loading="lazy">
+          <img src="${foodImage(restaurant.flashOnly ? restaurant.image : dish.image, 180)}" alt="" loading="lazy">
           <div class="restaurant-dish-copy"><span>POPULAR PICK</span><strong>${dish.name}</strong><b>${money(dish.price)}</b></div>
           ${state.cart[key]
             ? `<div class="quantity-control"><button type="button" data-quantity="-1" data-key="${key}" aria-label="Remove one ${dish.name}">−</button><span>${state.cart[key]}</span><button type="button" data-quantity="1" data-key="${key}" aria-label="Add one ${dish.name}">+</button></div>`
@@ -1212,45 +1604,135 @@ function renderRestaurants() {
   }).join("");
 }
 
-function flashProductCategory(restaurant, dish) {
-  return restaurant.flashOnly ? dish.flashCategory : null;
+function renderFlashCategories() {
+  const countForCategory = (category) => category === "All items"
+    ? flashProducts.length
+    : flashProducts.filter((product) => product.flashCategory === category).length;
+  $("#flash-category-list").innerHTML = flashCatalogCategories.map((category) => `
+    <button class="flash-category-card ${state.flashStoreCategory === category.filter ? "selected" : ""}" type="button" data-flash-filter="${category.filter}" aria-pressed="${state.flashStoreCategory === category.filter}">
+      <span aria-hidden="true">${category.icon}</span><strong>${category.label}</strong><small>${countForCategory(category.filter)} items</small>
+    </button>
+  `).join("");
 }
 
-function renderFlashCatalog() {
-  const activeFilter = document.querySelector("[data-flash-filter].selected")?.dataset.flashFilter || "All items";
-  const query = state.query.trim().toLowerCase();
-  const restaurant = restaurants.find((item) => item.id === "cravy-flash");
-  const items = restaurant.dishes
-    .filter((dish) => activeFilter === "All items" || flashProductCategory(restaurant, dish) === activeFilter)
-    .filter((dish) => !query || `${dish.name} ${dish.description} ${dish.flashCategory}`.toLowerCase().includes(query))
-    .map((dish, index) => ({ restaurant, dish, category: flashProductCategory(restaurant, dish), index }));
-  $("#flash-item-count").textContent = `${items.length} ${items.length === 1 ? "item" : "items"}`;
-  $("#flash-empty-state").classList.toggle("hidden", items.length > 0);
-  $("#flash-product-grid").classList.toggle("hidden", items.length === 0);
-  $("#flash-product-grid").innerHTML = items.map(({ restaurant, dish, category, index }) => {
-    const key = `${restaurant.id}:${dish.id}`;
-    const quantity = state.cart[key] || 0;
-    const discountedPrice = Math.round(dish.price * (100 - dish.discount) / 100);
-    return `
-      <article class="flash-product-card">
-        ${category === "Vegetables"
-          ? `<img class="flash-product-image" src="${vegetableImage(index)}" alt="${dish.name}" loading="lazy">`
-          : `<img class="flash-product-image" src="${foodImage(dish.image)}" alt="${dish.name}" loading="lazy">`}
-        <span class="flash-discount-badge">${dish.discount}% OFF</span>
-        <div class="flash-product-info">
-          <span class="flash-product-category">${category === "Fruits" ? "Fresh Fruits" : category}</span>
-          <h2>${dish.name}</h2>
-          <p>${dish.quantityLabel} <span aria-hidden="true">·</span> Delivered in 10–15 mins</p>
-          <div class="flash-product-bottom"><div><strong>${money(discountedPrice)}</strong><del>${money(dish.price)}</del></div>
-            ${quantity
-              ? `<div class="quantity-control"><button type="button" data-quantity="-1" data-key="${key}" aria-label="Remove one ${dish.name}">−</button><span aria-live="polite">${quantity}</span><button type="button" data-quantity="1" data-key="${key}" aria-label="Add one ${dish.name}">+</button></div>`
-              : `<button class="add-item-button" type="button" data-add-item="${key}"><span aria-hidden="true">+</span> Add</button>`}
-          </div>
+function renderFlashProductCard(product) {
+  const key = `cravy-flash:${product.id}`;
+  const quantity = state.cart[key] || 0;
+  const isWishlisted = state.wishlist.includes(product.id);
+  return `
+    <article class="flash-product-card">
+      <div class="flash-product-art">
+        <img class="flash-product-image" src="${product.image || flashImagePlaceholder(product.name)}" alt="${product.name}" data-flash-product-image="${product.id}" loading="lazy">
+        <span class="flash-discount-badge">${product.discount}</span>
+        <button class="flash-wishlist-button ${isWishlisted ? "active" : ""}" type="button" data-wishlist="${product.id}" aria-label="${isWishlisted ? "Remove" : "Add"} ${product.name} ${isWishlisted ? "from" : "to"} wishlist" aria-pressed="${isWishlisted}"><span aria-hidden="true">${isWishlisted ? "♥" : "♡"}</span></button>
+      </div>
+      <div class="flash-product-info">
+        <span class="flash-product-category">${product.flashCategory === "Fruits" ? "Fresh Fruits" : product.flashCategory === "Vegetables" ? "Fresh Vegetables" : product.flashCategory}</span>
+        <h3>${product.name}</h3>
+        <p class="flash-product-meta">${product.weight} <span aria-hidden="true">·</span> 10–15 mins</p>
+        <div class="flash-product-bottom"><div><strong>${money(product.price)}</strong><del>${money(product.originalPrice)}</del></div>
+          ${quantity
+            ? `<div class="quantity-control"><button type="button" data-quantity="-1" data-key="${key}" aria-label="Remove one ${product.name}">−</button><span aria-live="polite">${quantity}</span><button type="button" data-quantity="1" data-key="${key}" aria-label="Add one ${product.name}">+</button></div>`
+            : `<button class="add-item-button" type="button" data-add-item="${key}" aria-label="Add ${product.name} to cart"><span aria-hidden="true">+</span> Add</button>`}
         </div>
-      </article>
+      </div>
+    </article>
+  `;
+}
+
+const flashStoreShelves = [
+  { id: "flash-bestsellers", title: "Best sellers", subtitle: "Neighbourhood favourites", products: () => flashProducts.filter((product) => product.bestseller) },
+  { id: "flash-fruits", title: "Fresh fruits", subtitle: "Picked ripe and ready", products: () => flashProducts.filter((product) => product.flashCategory === "Fruits") },
+  { id: "flash-vegetables", title: "Fresh vegetables", subtitle: "30 fresh picks from the market", products: () => flashProducts.filter((product) => product.flashCategory === "Vegetables") },
+  { id: "flash-dry-fruits", title: "Dry fruits", subtitle: "A wholesome little handful", products: () => flashProducts.filter((product) => product.flashCategory === "Dry Fruits") },
+  { id: "flash-chocolates", title: "Chocolates & sweets", subtitle: "A treat for every kind of day", products: () => flashProducts.filter((product) => ["Chocolates", "Sweets & Desserts"].includes(product.flashCategory)) },
+  { id: "flash-ice-creams", title: "Ice creams", subtitle: "Keep it cool", products: () => flashProducts.filter((product) => product.flashCategory === "Ice Creams") },
+  { id: "flash-cakes", title: "Cakes & bakery", subtitle: "Freshly baked goodness", products: () => flashProducts.filter((product) => ["Cakes", "Bakery"].includes(product.flashCategory)) },
+  { id: "flash-daily-essentials", title: "Daily essentials", subtitle: "The everyday things you need", products: () => flashProducts.filter((product) => ["Dairy Products", "Milk & Eggs", "Rice & Dals", "Atta & Flour", "Cooking Oil", "Household Essentials"].includes(product.flashCategory)) },
+  { id: "flash-offers", title: "Special offers", subtitle: "Good picks at even better prices", products: () => flashProducts.filter((product) => product.discountPercent >= 18).sort((first, second) => second.discountPercent - first.discountPercent) },
+  { id: "flash-recent", title: "Recently added", subtitle: "New to your neighbourhood store", products: () => flashProducts.filter((product) => product.recentlyAdded) },
+];
+
+function renderFlashShelves() {
+  $("#flash-store-shelves").innerHTML = flashStoreShelves.map((shelf) => {
+    const products = shelf.products().slice(0, 8);
+    if (!products.length) return "";
+    return `
+      <section class="flash-shelf" id="${shelf.id}" aria-labelledby="${shelf.id}-title">
+        <div class="flash-products-heading"><div><p class="section-kicker">${shelf.subtitle}</p><h2 id="${shelf.id}-title">${shelf.title}</h2></div>
+          <button type="button" class="flash-shelf-more" data-flash-shelf="${shelf.id}">Shop more <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="flash-product-grid">${products.map(renderFlashProductCard).join("")}</div>
+      </section>
     `;
   }).join("");
 }
+
+function renderFlashCatalog() {
+  flashImageObserver?.disconnect();
+  renderFlashCategories();
+
+  const query = state.query.trim().toLocaleLowerCase();
+  const restaurant = restaurants.find((item) => item.id === "cravy-flash");
+  const selectedShelf = flashStoreShelves.find((shelf) => shelf.id === state.flashShelfFilter);
+  let items = (selectedShelf ? selectedShelf.products() : restaurant.dishes)
+    .filter((product) => state.flashShelfFilter || state.flashStoreCategory === "All items" || product.flashCategory === state.flashStoreCategory)
+    .filter((product) => !state.flashOffersOnly || product.discountPercent >= 18)
+    .filter((product) => !query || `${product.name} ${product.teluguName || ""} ${product.description} ${product.flashCategory}`.toLocaleLowerCase().includes(query));
+  if (state.flashSort === "price-low") items.sort((first, second) => first.price - second.price);
+  if (state.flashSort === "price-high") items.sort((first, second) => second.price - first.price);
+
+  const browseMode = state.flashStoreCategory === "All items" && !state.flashShelfFilter && !query && !state.flashOffersOnly && state.flashSort === "recommended";
+  $("#flash-item-count").textContent = `${items.length} ${items.length === 1 ? "product" : "products"}`;
+  $("#flash-results-title").textContent = query
+    ? `Results for “${state.query.trim()}”`
+    : state.flashOffersOnly ? "Products on offer"
+      : selectedShelf ? selectedShelf.title
+      : state.flashStoreCategory === "All items" ? "Shop all groceries"
+        : flashCatalogCategories.find((category) => category.filter === state.flashStoreCategory)?.label || state.flashStoreCategory;
+  $("#flash-results-panel").classList.toggle("hidden", browseMode);
+  $("#flash-store-shelves").classList.toggle("hidden", !browseMode);
+  $("#flash-offers-toggle").classList.toggle("selected", state.flashOffersOnly);
+  $("#flash-offers-toggle").setAttribute("aria-pressed", String(state.flashOffersOnly));
+  $("#flash-sort").value = state.flashSort;
+  $("#flash-empty-state").classList.toggle("hidden", items.length > 0);
+  $("#flash-product-grid").classList.toggle("hidden", items.length === 0);
+  $("#flash-product-grid").innerHTML = items.map(renderFlashProductCard).join("");
+  renderFlashShelves();
+
+  $("#flash-page").querySelectorAll("[data-flash-product-image]").forEach((image) => {
+    const product = flashProducts.find((item) => item.id === image.dataset.flashProductImage);
+    if (!product) return;
+    if (product.image) {
+      loadFlashProductImage(image, product);
+    } else if (flashImageObserver) {
+      flashImageObserver.observe(image);
+    } else {
+      loadFlashProductImage(image, product);
+    }
+  });
+}
+
+$("#flash-page").addEventListener("error", (event) => {
+  const image = event.target.closest("[data-flash-product-image]");
+  if (!image) return;
+
+  const product = flashProducts.find((item) => item.id === image.dataset.flashProductImage);
+  if (!product) return;
+  const failedUrl = image.currentSrc;
+  if (image.dataset.flashImageRetried) {
+    console.error(`Product image and its item-specific fallback failed for ${product.name}.`);
+    image.removeAttribute("src");
+    image.classList.add("image-unavailable");
+    return;
+  }
+
+  image.dataset.flashImageRetried = "true";
+  if (usedFlashImageUrls.get(failedUrl) === product.id) usedFlashImageUrls.delete(failedUrl);
+  product.image = "";
+  image.src = flashImagePlaceholder(product.name);
+  loadFlashProductImage(image, product, true, failedUrl);
+}, true);
 
 function renderCart() {
   const entries = Object.entries(state.cart).filter(([, quantity]) => quantity > 0);
@@ -1380,15 +1862,17 @@ function openFilters() {
 function openCheckout() {
   const firstItem = Object.keys(state.cart)[0];
   if (!firstItem) return;
+  const savedAddress = state.addresses[0] || state.location;
+  const savedPhone = /^\d{10}$/.test(state.account?.contact || "") ? state.account.contact : "";
   showDialog(`
     <div class="simple-dialog checkout-dialog"><p class="section-kicker">ALMOST THERE</p><h2 id="dialog-title">Where should we bring it?</h2><p>You're just one step away from something delicious.</p>
       <form id="checkout-form" class="checkout-form">
-        <label>Your name<input name="name" type="text" autocomplete="name" placeholder="e.g. Alex Morgan" required minlength="2"></label>
-        <label>Phone number<input name="phone" type="tel" autocomplete="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" required></label>
-        <label>Delivery address<textarea name="address" autocomplete="street-address" rows="2" placeholder="House / flat, street, area" required minlength="5"></textarea></label>
+        <label>Your name<input name="name" type="text" autocomplete="name" value="${escapeHtml(state.account?.name || "")}" placeholder="e.g. Alex Morgan" required minlength="2"></label>
+        <label>Phone number<input name="phone" type="tel" autocomplete="tel" value="${savedPhone}" placeholder="10-digit mobile number" pattern="[0-9]{10}" required></label>
+        <label>Delivery address<textarea name="address" autocomplete="street-address" rows="2" placeholder="House / flat, street, area" required minlength="5">${escapeHtml(savedAddress)}</textarea></label>
         <label>Payment method<select name="payment"><option>Pay on delivery</option><option>UPI (demo)</option><option>Credit / debit card (demo)</option></select></label>
         <div class="checkout-total"><span>Order total</span><strong>${$("#grand-total").textContent}</strong></div>
-        <button class="primary-button checkout-submit" type="submit">Place demo order <span aria-hidden="true">→</span></button>
+        <button class="primary-button checkout-submit" type="submit">Place order <span aria-hidden="true">→</span></button>
         <p class="demo-disclaimer">This is a demo. No payment will be collected.</p>
       </form>
     </div>`);
@@ -1403,14 +1887,22 @@ function placeOrder(form) {
     return dish && restaurant ? { name: dish.name, count, restaurant: restaurant.name } : null;
   }).filter(Boolean);
   const orderNumber = `CR${Date.now().toString().slice(-6)}`;
-  const order = { id: orderNumber, name: formData.get("name"), location: formData.get("address"), items, total: $("#grand-total").textContent, createdAt: new Date().toISOString() };
+  const customerName = String(formData.get("name")).trim();
+  const phone = String(formData.get("phone")).trim();
+  const address = String(formData.get("address")).trim();
+  const payment = String(formData.get("payment"));
+  const order = { id: orderNumber, name: customerName, phone, location: address, payment, items, total: $("#grand-total").textContent, createdAt: new Date().toISOString() };
   state.orders.unshift(order);
+  state.addresses = [address, ...state.addresses.filter((savedAddress) => savedAddress !== address)];
+  state.account = { name: customerName, contact: phone };
+  saveStorage(keys.addresses, state.addresses);
+  saveStorage(keys.account, state.account);
   saveStorage(keys.orders, state.orders);
   state.cart = {};
   saveStorage(keys.cart, state.cart);
   renderCart();
-  const safeName = String(order.name).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]);
-  showDialog(`<div class="simple-dialog order-success"><span class="success-icon" aria-hidden="true">✓</span><p class="section-kicker">ORDER CONFIRMED</p><h2 id="dialog-title">You're all set, ${safeName}!</h2><p>Your demo order <strong>#${orderNumber}</strong> is being prepared. Get comfy—we'll have it at your door in about 30 minutes.</p>
+  const safeName = escapeHtml(order.name);
+  showDialog(`<div class="simple-dialog order-success"><span class="success-icon" aria-hidden="true">✓</span><p class="section-kicker">ORDER CONFIRMED</p><h2 id="dialog-title">You're all set, ${safeName}!</h2><p>Your demo order <strong>#${orderNumber}</strong> is being prepared. Get comfy—we'll have it at your door in about 10–15 minutes.</p>
     <div class="order-progress"><span class="progress-step done"><b>✓</b><span>Confirmed</span></span><i></i><span class="progress-step active"><b>2</b><span>Preparing</span></span><i></i><span class="progress-step"><b>3</b><span>On the way</span></span></div>
     <div class="order-receipt">${items.map((item) => `<div><span>${item.count} × ${item.name}</span><strong>${item.restaurant}</strong></div>`).join("")}<div class="receipt-total"><span>Total (demo)</span><strong>${order.total}</strong></div></div>
     <button class="primary-button full-button" type="button" data-close-dialog>Back to browsing</button></div>`);
@@ -1420,9 +1912,13 @@ function setQuery(value) {
   state.query = value;
   $("#search-input").value = value;
   $("#hero-search-input").value = value;
-  renderRestaurants();
-  if (document.body.classList.contains("flash-page-mode")) renderFlashCatalog();
-  $("#restaurants").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (document.body.classList.contains("flash-page-mode")) {
+    renderFlashCatalog();
+    $("#flash-products").scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    renderRestaurants();
+    $("#restaurants").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function syncFilters() {
@@ -1458,28 +1954,57 @@ function openLocationDialog() {
 
     button.disabled = true;
     button.textContent = "Finding your location...";
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        const location = `Near ${coords.latitude.toFixed(5)}, ${coords.longitude.toFixed(5)}`;
+    navigator.geolocation.getCurrentPosition(async ({ coords }) => {
+      button.textContent = "Looking up your area...";
+      try {
+        const location = await reverseGeocode(coords.latitude, coords.longitude);
         state.location = location;
         $("#current-location").textContent = location;
         if ($("#use-current-location-button") === button) dialog.close();
         showToast("Current location selected.");
         saveStorage(keys.location, state.location);
-      },
-      (error) => {
+      } catch (error) {
+        console.error("Could not look up the current location.", error);
         button.disabled = false;
         button.textContent = "Use my current location";
-        const message = error.code === 1
-          ? "Location permission was denied. Allow access in your browser and try again."
-          : error.code === 3
-            ? "Finding your location timed out. Please try again."
-            : "Your location couldn't be determined. Try again or enter your area.";
-        showToast(message);
-      },
-      { maximumAge: 60000, timeout: 10000 },
-    );
+        showToast("We couldn't identify a nearby address. Enter your area instead.");
+      }
+    }, (error) => {
+      button.disabled = false;
+      button.textContent = "Use my current location";
+      const message = error.code === 1
+        ? "Location permission was denied. Allow access in your browser and try again."
+        : error.code === 3
+          ? "Finding your location timed out. Please try again."
+          : "Your location couldn't be determined. Try again or enter your area.";
+      showToast(message);
+    }, { maximumAge: 60000, timeout: 10000 });
   });
+}
+
+async function reverseGeocode(latitude, longitude) {
+  const url = new URL("https://api.bigdatacloud.net/data/reverse-geocode-client");
+  url.searchParams.set("latitude", latitude);
+  url.searchParams.set("longitude", longitude);
+  url.searchParams.set("localityLanguage", "en");
+
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 10000);
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    if (!response.ok) throw new Error(`Address lookup failed (${response.status}).`);
+
+    const data = await response.json();
+    const locality = data.locality || data.city || data.principalSubdivision;
+    if (typeof locality !== "string" || !locality.trim()) {
+      throw new Error("The address lookup returned no locality.");
+    }
+
+    const city = typeof data.city === "string" && data.city !== locality ? data.city : "";
+    return [locality, city].filter(Boolean).join(", ");
+  } finally {
+    window.clearTimeout(timeout);
+  }
 }
 
 function openFoodAnalysisDialog() {
@@ -1538,26 +2063,56 @@ async function analyzeFoodItem(form) {
 }
 
 function openAccountDialog() {
-  showDialog(`<div class="simple-dialog"><div class="account-avatar">A</div><p class="section-kicker">WELCOME TO CRAVY</p><h2 id="dialog-title">Good food is closer.</h2><p>Sign in is a demo feature. No account or personal information is stored.</p><form id="account-form" class="checkout-form"><label>Email or phone<input name="contact" type="text" placeholder="you@example.com" required></label><button class="primary-button checkout-submit" type="submit">Continue</button></form></div>`);
+  renderAccountDialog(state.account ? "profile" : "sign-in");
+}
+
+function renderAccountDialog(activeTab = "profile", authMode = "sign-in") {
+  if (!state.account) {
+    showDialog(`<div class="simple-dialog"><div class="account-avatar">✦</div><p class="section-kicker">YOUR CRAVY ACCOUNT</p><h2 id="dialog-title">${authMode === "sign-up" ? "Create your account" : "Welcome back"}</h2><p>Save your details for a quicker checkout. This demo stores your profile on this device only.</p><div class="account-auth-tabs"><button type="button" data-account-mode="sign-in" class="${authMode === "sign-in" ? "selected" : ""}">Sign in</button><button type="button" data-account-mode="sign-up" class="${authMode === "sign-up" ? "selected" : ""}">Sign up</button></div><form id="account-form" class="checkout-form" data-auth-mode="${authMode}">${authMode === "sign-up" ? '<label>Your name<input name="name" type="text" autocomplete="name" placeholder="e.g. Alex Morgan" required minlength="2"></label>' : ""}<label>Mobile number or email<input name="contact" type="text" autocomplete="username" placeholder="9876543210 or you@example.com" required></label><button class="primary-button checkout-submit" type="submit">${authMode === "sign-up" ? "Create account" : "Continue"}</button></form><p class="account-demo-note">Demo sign-in only. No password or payment information is collected.</p></div>`);
+    return;
+  }
+
+  const tabs = [
+    ["profile", "My profile"],
+    ["orders", "My orders"],
+    ["addresses", "Saved addresses"],
+    ["wishlist", "Wishlist"],
+  ];
+  let content = "";
+  if (activeTab === "profile") {
+    content = `<form id="profile-form" class="checkout-form"><label>Your name<input name="name" type="text" autocomplete="name" value="${escapeHtml(state.account.name)}" required minlength="2"></label><label>Mobile number or email<input name="contact" type="text" autocomplete="email" value="${escapeHtml(state.account.contact)}" required></label><button class="primary-button checkout-submit" type="submit">Save profile</button></form>`;
+  } else if (activeTab === "orders") {
+    content = state.orders.length
+      ? `<div class="account-order-list">${state.orders.map((order) => `<article class="account-order"><div><strong>Order #${escapeHtml(order.id)}</strong><span>${new Date(order.createdAt).toLocaleDateString("en-IN")}</span></div><p>${order.items.map((item) => `${item.count} × ${escapeHtml(item.name)}`).join(", ")}</p><strong>${escapeHtml(order.total)}</strong></article>`).join("")}</div>`
+      : `<div class="account-empty-state"><span>🛍️</span><strong>No orders yet</strong><p>Your Cravy Flash orders will show up here.</p></div>`;
+  } else if (activeTab === "addresses") {
+    content = `<div class="account-address-list">${state.addresses.map((address, index) => `<div class="account-address"><span>⌖</span><p>${escapeHtml(address)}</p><button type="button" data-remove-address="${index}" aria-label="Remove saved address">×</button></div>`).join("")}</div><form id="address-form" class="checkout-form"><label>Add a delivery address<textarea name="address" rows="2" placeholder="House / flat, street, area" required minlength="5"></textarea></label><button class="primary-button checkout-submit" type="submit">Save address</button></form>`;
+  } else {
+    const wishlistedProducts = flashProducts.filter((product) => state.wishlist.includes(product.id));
+    content = wishlistedProducts.length
+      ? `<div class="account-wishlist-list">${wishlistedProducts.map((product) => `<article class="account-wishlist-item"><img src="${product.image || flashImagePlaceholder(product.name)}" alt=""><div><strong>${escapeHtml(product.name)}</strong><span>${escapeHtml(product.weight)} · ${money(product.price)}</span></div><button type="button" data-wishlist="${product.id}" aria-label="Remove ${escapeHtml(product.name)} from wishlist">♥</button></article>`).join("")}</div>`
+      : `<div class="account-empty-state"><span>♡</span><strong>Your wishlist is waiting</strong><p>Save products with the heart button to find them here.</p></div>`;
+  }
+
+  showDialog(`<div class="account-dashboard"><div class="account-dashboard-heading"><div class="account-avatar">${escapeHtml(state.account.name.trim().charAt(0).toUpperCase() || "C")}</div><div><p class="section-kicker">YOUR CRAVY ACCOUNT</p><h2 id="dialog-title">Hi, ${escapeHtml(state.account.name.split(" ")[0])}</h2></div></div><div class="account-tabs" role="tablist">${tabs.map(([tab, label]) => `<button type="button" data-account-view="${tab}" role="tab" aria-selected="${activeTab === tab}">${label}</button>`).join("")}</div><section class="account-tab-panel">${content}</section><button class="account-signout" type="button" data-account-signout>Sign out</button></div>`);
+}
+
+function toggleFlashWishlist(productId) {
+  state.wishlist = state.wishlist.includes(productId)
+    ? state.wishlist.filter((id) => id !== productId)
+    : [...state.wishlist, productId];
+  saveStorage(keys.wishlist, state.wishlist);
 }
 
 renderCategories();
 renderRestaurants();
 renderCart();
 $("#current-location").textContent = state.location;
-if (new URLSearchParams(window.location.search).get("view") === "flash") {
-  document.body.classList.add("flash-page-mode");
-  $("#flash-page").hidden = false;
-  document.title = "Cravy Flash - Delivered in 10–15 minutes";
-  $("#brand-logo").innerHTML = 'cravy <span class="brand-flash">flash</span>';
-  $("#brand-logo").setAttribute("aria-label", "Cravy Flash home");
-  $(".flash-nav-label").classList.add("hidden");
-  $(".flash-speed-label").textContent = "10–15 min delivery";
-  $(".flash-speed-label").classList.remove("hidden");
-  $("#search-input").placeholder = "Search fruits, treats, and essentials";
-  $(".header-search kbd").classList.add("hidden");
-  renderFlashCatalog();
+if (state.account?.name) {
+  $("#account-button .avatar").textContent = state.account.name.trim().charAt(0).toUpperCase();
+  $("#account-button > span:last-child").textContent = "My account";
 }
+renderRoute();
 
 $("#category-list").addEventListener("click", (event) => {
   const button = event.target.closest("[data-category]");
@@ -1568,29 +2123,55 @@ $("#category-list").addEventListener("click", (event) => {
   renderRestaurants();
 });
 
-$(".flash-options").addEventListener("click", (event) => {
-  const button = event.target.closest("[data-flash-category]");
-  if (!button) return;
-  state.category = "All";
-  state.flashCategory = state.flashCategory === button.dataset.flashCategory ? null : button.dataset.flashCategory;
-  renderCategories();
-  renderRestaurants();
-  $("#restaurants").scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
-$(".flash-catalog-filters").addEventListener("click", (event) => {
+$("#flash-category-list").addEventListener("click", (event) => {
   const button = event.target.closest("[data-flash-filter]");
   if (!button) return;
-  $(".flash-catalog-filters .selected")?.classList.remove("selected");
-  $(".flash-catalog-filters [aria-pressed='true']")?.setAttribute("aria-pressed", "false");
-  button.classList.add("selected");
-  button.setAttribute("aria-pressed", "true");
+  state.flashStoreCategory = button.dataset.flashFilter;
+  state.flashShelfFilter = null;
+  state.flashOffersOnly = false;
+  state.flashSort = "recommended";
   renderFlashCatalog();
+  $("#flash-products").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+$("#flash-offers-toggle").addEventListener("click", () => {
+  state.flashOffersOnly = !state.flashOffersOnly;
+  state.flashStoreCategory = "All items";
+  state.flashShelfFilter = null;
+  renderFlashCatalog();
+  $("#flash-products").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+$("#flash-sort").addEventListener("change", (event) => {
+  state.flashSort = event.target.value;
+  renderFlashCatalog();
+});
+
+$("#flash-page").addEventListener("click", (event) => {
+  const wishlistButton = event.target.closest("[data-wishlist]");
+  if (wishlistButton) {
+    const product = flashProducts.find((item) => item.id === wishlistButton.dataset.wishlist);
+    if (!product) return;
+    toggleFlashWishlist(product.id);
+    renderFlashCatalog();
+    showToast(state.wishlist.includes(product.id) ? "Saved to your wishlist." : "Removed from your wishlist.");
+    return;
+  }
+
+  const shelfFilter = event.target.closest(".flash-shelf-more[data-flash-shelf]");
+  if (!shelfFilter) return;
+  state.flashStoreCategory = "All items";
+  state.flashShelfFilter = shelfFilter.dataset.flashShelf;
+  state.flashOffersOnly = false;
+  state.flashSort = "recommended";
+  renderFlashCatalog();
+  $("#flash-products").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 restaurantGrid.addEventListener("click", (event) => {
   const favorite = event.target.closest("[data-favorite]");
   if (favorite) {
+    if (currentRoute() !== "/") navigateTo("/");
     const restaurantId = favorite.dataset.favorite;
     state.favorites = state.favorites.includes(restaurantId)
       ? state.favorites.filter((id) => id !== restaurantId)
@@ -1636,6 +2217,7 @@ $("#filter-rating").addEventListener("click", () => { state.topRated = !state.to
 $("#filter-offers").addEventListener("click", () => { state.offersOnly = !state.offersOnly; syncFilters(); });
 $("#clear-filters-button").addEventListener("click", resetFilters);
 $("#favorites-button").addEventListener("click", () => {
+  if (currentRoute() !== "/") navigateTo("/");
   state.favoritesOnly = !state.favoritesOnly;
   syncFilters();
   if (state.favoritesOnly) $("#restaurants").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1659,8 +2241,31 @@ $("#footer-help").addEventListener("click", (event) => {
   event.preventDefault();
   showDialog(`<div class="simple-dialog"><p class="section-kicker">WE'RE HERE FOR YOU</p><h2 id="dialog-title">A little help?</h2><p>Cravy is a front-end demo. Orders are not sent to restaurants and payments are not processed. Your saved cart and favorites stay in this browser.</p><button class="primary-button full-button" type="button" data-close-dialog>Got it</button></div>`);
 });
+[
+  ["flash-support-link", "CUSTOMER SUPPORT", "How can we help?", "For help with a demo order, delivery address or product, contact the Cravy Flash team at hello@cravy.example. Orders and payments are simulated in this demo."],
+  ["flash-about-link", "ABOUT CRAVY FLASH", "Freshness, in a flash.", "Cravy Flash is your neighbourhood grocery demo for market-fresh produce, daily essentials and little treats, delivered in 10–15 minutes."],
+  ["flash-privacy-link", "PRIVACY", "Your data stays on this device.", "This frontend demo saves your cart, profile, addresses, wishlist and order history in your browser's local storage. It does not process payments or send orders to a store."],
+  ["flash-terms-link", "TERMS & CONDITIONS", "A quick note.", "Cravy Flash is a sample shopping experience. Product prices and availability are illustrative, and checkout orders are saved only in your browser. No real payment or delivery is arranged."],
+].forEach(([id, kicker, title, copy]) => {
+  $(`#${id}`).addEventListener("click", (event) => {
+    event.preventDefault();
+    showDialog(`<div class="simple-dialog"><p class="section-kicker">${kicker}</p><h2 id="dialog-title">${title}</h2><p>${copy}</p><button class="primary-button full-button" type="button" data-close-dialog>Got it</button></div>`);
+  });
+});
 
 document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href]");
+  if (link && link.id !== "footer-help" && !event.defaultPrevented
+      && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey
+      && (!link.target || link.target === "_self") && !link.hasAttribute("download")) {
+    const target = new URL(link.href, window.location.href);
+    if (target.origin === window.location.origin
+        && ["/", "/flash"].includes(target.pathname.replace(/\/+$/, "") || "/")) {
+      event.preventDefault();
+      navigateTo(target.href);
+    }
+  }
+
   const addButton = event.target.closest("[data-add-item]");
   if (addButton) addToCart(addButton.dataset.addItem);
 
@@ -1703,11 +2308,42 @@ document.addEventListener("click", (event) => {
   }
 });
 
+window.addEventListener("popstate", renderRoute);
+
 $("#dialog-content").addEventListener("submit", (event) => {
   event.preventDefault();
   if (!event.target.reportValidity()) return;
   if (event.target.id === "checkout-form") placeOrder(event.target);
   if (event.target.id === "food-analysis-form") analyzeFoodItem(event.target);
+  if (event.target.id === "account-form") {
+    const formData = new FormData(event.target);
+    const contact = String(formData.get("contact")).trim();
+    const name = String(formData.get("name") || contact.split("@")[0]).trim();
+    state.account = { name, contact };
+    saveStorage(keys.account, state.account);
+    $("#account-button .avatar").textContent = name.charAt(0).toUpperCase();
+    $("#account-button > span:last-child").textContent = "My account";
+    renderAccountDialog("profile");
+    showToast("You're signed in on this device.");
+  }
+  if (event.target.id === "profile-form") {
+    const formData = new FormData(event.target);
+    state.account = {
+      name: String(formData.get("name")).trim(),
+      contact: String(formData.get("contact")).trim(),
+    };
+    saveStorage(keys.account, state.account);
+    $("#account-button .avatar").textContent = state.account.name.charAt(0).toUpperCase();
+    renderAccountDialog("profile");
+    showToast("Profile updated.");
+  }
+  if (event.target.id === "address-form") {
+    const address = String(new FormData(event.target).get("address")).trim();
+    state.addresses = [address, ...state.addresses.filter((savedAddress) => savedAddress !== address)];
+    saveStorage(keys.addresses, state.addresses);
+    renderAccountDialog("addresses");
+    showToast("Address saved.");
+  }
   if (event.target.id === "location-form") {
     const location = new FormData(event.target).get("location").trim();
     if (!location) return;
@@ -1717,9 +2353,47 @@ $("#dialog-content").addEventListener("submit", (event) => {
     showToast("Delivery location updated.");
     saveStorage(keys.location, state.location);
   }
-  if (event.target.id === "account-form") {
-    dialog.close();
-    showToast("Thanks! Sign-in is not enabled in this demo.");
+});
+
+$("#dialog-content").addEventListener("click", (event) => {
+  const accountMode = event.target.closest("[data-account-mode]");
+  if (accountMode) {
+    renderAccountDialog("sign-in", accountMode.dataset.accountMode);
+    return;
+  }
+
+  const accountView = event.target.closest("[data-account-view]");
+  if (accountView) {
+    renderAccountDialog(accountView.dataset.accountView);
+    return;
+  }
+
+  const removeAddress = event.target.closest("[data-remove-address]");
+  if (removeAddress) {
+    state.addresses.splice(Number(removeAddress.dataset.removeAddress), 1);
+    saveStorage(keys.addresses, state.addresses);
+    renderAccountDialog("addresses");
+    return;
+  }
+
+  if (event.target.closest("[data-account-signout]")) {
+    state.account = null;
+    saveStorage(keys.account, state.account);
+    $("#account-button .avatar").textContent = "A";
+    $("#account-button > span:last-child").textContent = "Sign in";
+    renderAccountDialog("sign-in");
+    showToast("You've signed out.");
+    return;
+  }
+
+  const wishlistButton = event.target.closest("[data-wishlist]");
+  if (wishlistButton) {
+    const product = flashProducts.find((item) => item.id === wishlistButton.dataset.wishlist);
+    if (!product) return;
+    toggleFlashWishlist(product.id);
+    renderFlashCatalog();
+    if (dialog.open) renderAccountDialog("wishlist");
+    showToast(state.wishlist.includes(product.id) ? "Saved to your wishlist." : "Removed from your wishlist.");
   }
 });
 
