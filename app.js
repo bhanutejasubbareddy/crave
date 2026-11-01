@@ -549,7 +549,7 @@ const restaurants = [
     offer: "Free spring rolls above ₹399",
     category: "Asian",
     veg: false,
-    image: "photo-1563245372-f21724e3856d",
+    image: "photo-1512058564366-18510be2db19",
     dishes: [
       { id: "chicken-hakka-noodles", name: "Chicken Hakka Noodles", description: "Wok-tossed noodles with chicken and crisp vegetables.", price: 269, veg: false, popular: true, image: "photo-1585032226651-759b368d7246" },
       { id: "veg-fried-rice", name: "Vegetable Fried Rice", description: "Steamed rice stir-fried with vegetables and spring onion.", price: 219, veg: true, popular: true, image: "photo-1512058564366-18510be2db19" },
@@ -800,12 +800,9 @@ const categories = [
   { name: "North Indian", icon: "🍛" },
   { name: "South Indian", icon: "🥞" },
   { name: "Asian", icon: "🥡" },
-  { name: "Healthy", icon: "🥗" },
+  { name: "Healthy", label: "Healthy Food", icon: "🥗" },
   { name: "Desserts", icon: "🍰" },
   { name: "Mexican", icon: "🌮" },
-  { name: "Chocolate", icon: "🍫" },
-  { name: "Ice Cream", icon: "🍨" },
-  { name: "Dry Fruits", icon: "🥜" },
 ];
 
 const extraDishesByCategory = {
@@ -857,18 +854,6 @@ const extraDishesByCategory = {
     { id: "mexican-extra-nachos", name: "Cheese & Salsa Nachos", description: "Crisp corn chips with warm cheese and fresh salsa.", price: 189, veg: true, popular: false, image: "photo-1513456852971-30c0b8199d4d" },
     { id: "mexican-extra-quesadilla", name: "Bean & Cheese Quesadilla", description: "Toasted tortilla filled with black beans and melted cheese.", price: 229, veg: true, popular: false, image: "photo-1565299585323-38d6b0865b47" },
   ],
-  Chocolate: [
-    { id: "chocolate-extra-truffles", name: "Classic Chocolate Truffles", description: "Rich cocoa-dusted truffles with a silky chocolate center.", price: 229, veg: true, popular: false, image: "photo-1511381939415-e44015466834" },
-    { id: "chocolate-extra-bark", name: "Almond Chocolate Bark", description: "Snappy chocolate topped with crunchy roasted almonds.", price: 199, veg: true, popular: false, image: "photo-1526081347589-7fa3cb41b4b2" },
-    { id: "chocolate-extra-fudge", name: "Walnut Chocolate Fudge", description: "Soft chocolate fudge with toasted walnut pieces.", price: 179, veg: true, popular: false, image: "photo-1606313564200-e75d5e30476c" },
-    { id: "chocolate-extra-cocoa", name: "Creamy Hot Chocolate", description: "A warm cup of smooth drinking chocolate.", price: 149, veg: true, popular: false, image: "photo-1511381939415-e44015466834" },
-  ],
-  "Ice Cream": [
-    { id: "icecream-extra-vanilla", name: "Classic Vanilla Scoop", description: "Creamy vanilla ice cream made with real vanilla.", price: 89, veg: true, popular: false, image: "photo-1560008581-09826d1de69e" },
-    { id: "icecream-extra-sundae", name: "Chocolate Fudge Sundae", description: "Chocolate sauce, vanilla scoops, and crunchy toppings.", price: 179, veg: true, popular: false, image: "photo-1563805042-7684c019e1cb" },
-    { id: "icecream-extra-mango", name: "Mango Sorbet", description: "Cool fruit sorbet made with sweet ripe mango.", price: 119, veg: true, popular: false, image: "photo-1501446529957-6226bd447c46" },
-    { id: "icecream-extra-strawberry", name: "Strawberry Milkshake", description: "A chilled strawberry shake blended with creamy ice cream.", price: 159, veg: true, popular: false, image: "photo-1572490122747-3968b75cc699" },
-  ],
   "Dry Fruits": [
     { id: "dryfruit-extra-almonds", name: "Premium Almonds", description: "Crunchy whole almonds packed fresh for snacking.", price: 229, veg: true, popular: false, image: "photo-1505576399279-565b52d4ac71" },
     { id: "dryfruit-extra-cashews", name: "Roasted Cashews", description: "Golden cashews roasted with a hint of sea salt.", price: 269, veg: true, popular: false, image: "photo-1505576399279-565b52d4ac71" },
@@ -877,6 +862,38 @@ const extraDishesByCategory = {
   ],
 };
 
+const flashVegetableNames = [
+  "Potato", "Tomato", "Onion", "Carrot", "Cabbage", "Cauliflower", "Broccoli", "Spinach", "Brinjal", "Okra",
+  "Cucumber", "Pumpkin", "Bitter Gourd", "Bottle Gourd", "Ridge Gourd", "Snake Gourd", "Drumstick", "Radish", "Beetroot", "Turnip",
+  "Sweet Potato", "Yam", "Taro", "Cassava", "Green Peas", "French Beans", "Cluster Beans", "Broad Beans", "Capsicum", "Green Chilli",
+  "Red Chilli", "Garlic", "Ginger", "Turmeric", "Coriander", "Mint", "Fenugreek", "Lettuce", "Celery", "Asparagus",
+  "Artichoke", "Brussels Sprouts", "Kale", "Leek", "Fennel", "Parsnip", "Zucchini", "Sweet Corn", "Baby Corn", "Mushrooms",
+  "Bok Choy", "Napa Cabbage", "Chinese Broccoli", "Lotus Root", "Bamboo Shoots", "Water Chestnut", "Bean Sprouts", "Chayote", "Kohlrabi", "Swiss Chard",
+  "Arugula", "Watercress", "Mustard Greens", "Amaranth Leaves", "Moringa Leaves", "Pumpkin Leaves", "Cassava Leaves", "Collard Greens", "Dandelion Greens", "Sorrel",
+  "Jicama", "Rutabaga", "Celeriac", "Salsify", "Jerusalem Artichoke", "Burdock Root", "Tinda", "Ivy Gourd", "Ash Gourd", "Raw Banana",
+  "Plantain", "Spring Onion", "Shallots", "Red Cabbage", "Yellow Squash", "Butternut Squash", "Acorn Squash", "Jalapeño", "Poblano Pepper", "Habanero Pepper",
+  "Tomatillo", "Endive", "Chicory", "Romanesco", "Garden Egg", "African Eggplant", "Jute Mallow", "Cowpea Leaves", "Seaweed", "Hearts of Palm",
+];
+
+const flashFruitNames = [
+  "Apple", "Banana", "Mango", "Orange", "Grapes", "Watermelon", "Papaya", "Pineapple", "Pomegranate", "Guava",
+  "Pear", "Peach", "Plum", "Nectarine", "Apricot", "Cherry", "Strawberry", "Blueberry", "Raspberry", "Blackberry",
+  "Cranberry", "Mulberry", "Kiwi", "Avocado", "Coconut", "Lemon", "Lime", "Sweet Lime", "Grapefruit", "Dragon Fruit",
+  "Passion Fruit", "Star Fruit", "Jackfruit", "Lychee", "Rambutan", "Longan", "Mangosteen", "Durian", "Persimmon", "Fig",
+  "Dates", "Custard Apple", "Sapodilla", "Indian Gooseberry", "Jamun", "Wood Apple", "Bael", "Tamarind", "Cape Gooseberry", "Soursop",
+  "Breadfruit", "Quince", "Cantaloupe", "Honeydew Melon", "Muskmelon", "Kiwano", "Pomelo", "Clementine", "Mandarin", "Tangerine",
+  "Blood Orange", "Kumquat", "Yuzu", "Ugli Fruit", "Loquat", "Medlar", "Elderberry", "Boysenberry", "Gooseberry", "Jujube",
+  "Miracle Fruit", "Ackee", "Salak", "Feijoa", "Jabuticaba", "Acerola", "Red Currant", "Black Currant", "Plantain", "Olive",
+];
+
+const flashFruitImages = [
+  "photo-1610832958506-aa56368176cf",
+  "photo-1547514701-42782101795e",
+  "photo-1571771894821-ce9b6c11b08e",
+  "photo-1550258987-190a2d5a0fe7",
+  "photo-1596591606975-97ee5cef3a1e",
+];
+
 function expandRestaurantCatalog() {
   const generatedRestaurantNames = [
     "Fresh Plate", "Golden Spoon", "Urban Fork", "Home Table",
@@ -884,10 +901,21 @@ function expandRestaurantCatalog() {
     "The Daily Dish", "Market Kitchen", "Simply Served", "The Tasty Spot",
     "Corner Table", "Flavour House", "Good Food Co.", "Neighbourhood Eats",
   ];
+  const catalogImages = [...new Set(restaurants.flatMap((restaurant) => [
+    restaurant.image,
+    ...restaurant.dishes.map((dish) => dish.image),
+  ]))];
 
   for (const category of categories.filter((item) => item.name !== "All")) {
     const categoryRestaurants = restaurants.filter((restaurant) => restaurant.category === category.name);
     if (!categoryRestaurants.length) continue;
+    const usedRestaurantImages = new Set();
+    for (const restaurant of categoryRestaurants) {
+      if (usedRestaurantImages.has(restaurant.image)) {
+        restaurant.image = catalogImages.find((candidate) => !usedRestaurantImages.has(candidate)) || restaurant.image;
+      }
+      usedRestaurantImages.add(restaurant.image);
+    }
 
     const dishPool = [];
     const dishNames = new Set();
@@ -933,13 +961,19 @@ function expandRestaurantCatalog() {
       restaurant.dishes = menu;
     }
 
+    const restaurantImages = [...new Set(dishPool.map(({ dish }) => dish.image))];
     for (let index = 0; index < generatedRestaurantNames.length; index += 1) {
       const template = categoryRestaurants[index % categoryRestaurants.length];
       const id = `more-${category.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${index + 1}`;
+      const image = restaurantImages.find((candidate) => !usedRestaurantImages.has(candidate))
+        || catalogImages.find((candidate) => !usedRestaurantImages.has(candidate))
+        || template.image;
+      usedRestaurantImages.add(image);
       restaurants.push({
         ...template,
         id,
         name: `${generatedRestaurantNames[index]} ${category.name}`,
+        image,
         rating: Math.max(4.2, Math.min(4.9, Number((template.rating + ((index % 5) - 2) * 0.1).toFixed(1)))),
         delivery: 18 + ((index * 7 + template.delivery) % 20),
         cost: Math.max(150, template.cost + ((index % 7) - 3) * 25),
@@ -953,6 +987,101 @@ function expandRestaurantCatalog() {
 }
 
 expandRestaurantCatalog();
+
+const flashDryFruitProducts = [...new Map(
+  restaurants
+    .filter((restaurant) => restaurant.category === "Dry Fruits")
+    .flatMap((restaurant) => restaurant.dishes)
+    .concat(extraDishesByCategory["Dry Fruits"])
+    .map((dish) => [dish.name, dish]),
+).values()];
+
+const flashProductsByCategory = [
+  ...flashVegetableNames.map((name, index) => ({
+    id: `vegetable-${index + 1}`,
+    name,
+    description: `Fresh ${name.toLowerCase()}, picked for your kitchen.`,
+    price: 39 + (index % 6) * 5,
+    veg: true,
+    image: "photo-1512621776951-a57141f2eefd",
+    flashCategory: "Vegetables",
+    quantityLabel: index % 3 === 0 ? "1 kg" : "500 g",
+  })),
+  ...flashFruitNames.map((name, index) => ({
+    id: `fruit-${index + 1}`,
+    name,
+    description: `Sweet, fresh ${name.toLowerCase()} ready to enjoy.`,
+    price: 49 + (index % 8) * 10,
+    veg: true,
+    image: flashFruitImages[index % flashFruitImages.length],
+    flashCategory: "Fruits",
+    quantityLabel: index % 3 === 0 ? "1 kg" : "500 g",
+  })),
+  ...flashDryFruitProducts.map((dish, index) => ({
+    ...dish,
+    flashCategory: "Dry Fruits",
+    quantityLabel: index % 2 === 0 ? "200 g" : "250 g",
+  })),
+  ...restaurants
+    .filter((restaurant) => restaurant.category === "Desserts")
+    .flatMap((restaurant) => restaurant.dishes)
+    .filter((dish) => /\b(cake|cheesecake|cupcake)\b/i.test(dish.name))
+    .map((dish) => ({ ...dish, flashCategory: "Cakes", quantityLabel: "1 pack" })),
+  ...restaurants
+    .filter((restaurant) => restaurant.category === "Ice Cream")
+    .flatMap((restaurant) => restaurant.dishes)
+    .map((dish) => ({ ...dish, flashCategory: "Ice Creams", quantityLabel: "500 ml" })),
+  ...restaurants
+    .filter((restaurant) => restaurant.category === "Chocolate")
+    .flatMap((restaurant) => restaurant.dishes)
+    .map((dish) => ({ ...dish, flashCategory: "Chocolates", quantityLabel: "1 pack" })),
+];
+const flashProducts = [...new Map(
+  flashProductsByCategory.map((product) => [`${product.flashCategory}:${product.name}`, product]),
+).values()].map((product, index) => ({
+  ...product,
+  id: `flash-${product.flashCategory.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${index + 1}`,
+  discount: 10 + (index % 4) * 5,
+}));
+
+for (let index = restaurants.length - 1; index >= 0; index -= 1) {
+  if (["Chocolate", "Ice Cream", "Dry Fruits"].includes(restaurants[index].category)) {
+    restaurants.splice(index, 1);
+  }
+}
+
+restaurants.push({
+  id: "cravy-flash",
+  name: "Cravy Flash",
+  cuisine: "Fresh essentials & sweet treats",
+  rating: 4.8,
+  delivery: 12,
+  cost: 0,
+  offer: "Lightning delivery",
+  category: "Flash",
+  veg: true,
+  flashOnly: true,
+  image: "photo-1542838132-92c53300491e",
+  dishes: flashProducts,
+});
+
+const vegetablePhotoIds = [
+  36400786, 29479888, 17140078, 1306559, 6316537, 6631953, 7676071, 28524414, 34096648, 38285914,
+  39490165, 39467457, 10487659, 29181513, 31080486, 9704414, 20371247, 31056129, 6740689, 6631952,
+  19897797, 33383280, 37408655, 17446132, 3650647, 13195446, 9030135, 38938579, 7342136, 38192931,
+  2880693, 38802742, 24916930, 11172118, 30890190, 39795133, 40209261, 33749230, 39815348, 33499935,
+  30309038, 30309037, 11611992, 34993617, 5503106, 38990977, 8024002, 7657028, 35975200, 1433487,
+  32667567, 6576148, 3938343, 36762410, 27643476, 39074069, 20308756, 12407410, 144206, 4163411,
+  7392730, 7333168, 4309708, 6316541, 4163410, 38088072, 13982572, 13982567, 13982570, 34705704,
+  10448740, 12181050, 7225537, 5041567, 7129162, 12296938, 12118672, 533342, 12296937, 36895504,
+  4307386, 31514958, 4110464, 7774212, 15428958, 17617617, 4414872, 6037886, 38308469, 27567600,
+  27961865, 32489640, 11633655, 30624993, 27791127, 40207161, 37540986, 34295170, 38341721, 15002300,
+];
+
+function vegetableImage(index) {
+  const photoId = vegetablePhotoIds[index % vegetablePhotoIds.length];
+  return `https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=640`;
+}
 
 const keys = { cart: "crave-cart", favorites: "crave-favorites", location: "crave-location", orders: "crave-orders" };
 
@@ -972,6 +1101,7 @@ const state = {
   orders: readStorage(keys.orders, []),
   location: readStorage(keys.location, "Indiranagar, Bengaluru"),
   category: "All",
+  flashCategory: null,
   query: "",
   vegOnly: false,
   topRated: false,
@@ -1014,18 +1144,24 @@ function showToast(message) {
 function renderCategories() {
   $("#category-list").innerHTML = categories.map((category) => `
     <button class="category-button ${state.category === category.name ? "selected" : ""}" type="button" data-category="${category.name}" aria-pressed="${state.category === category.name}">
-      <span class="category-icon">${category.icon}</span><span>${category.name}</span>
+      <span class="category-icon">${category.icon}</span><span>${category.label || category.name}</span>
     </button>
   `).join("");
+}
+
+function flashMatchesRestaurant(restaurant) {
+  return restaurant.dishes.some((dish) => dish.flashCategory === state.flashCategory);
 }
 
 function visibleRestaurants() {
   const query = state.query.trim().toLowerCase();
   let matches = restaurants.filter((restaurant) => {
+    if (restaurant.flashOnly && !state.flashCategory) return false;
     const dishMatches = restaurant.dishes.some((dish) => `${dish.name} ${dish.description}`.toLowerCase().includes(query));
     const matchesSearch = !query || `${restaurant.name} ${restaurant.cuisine} ${restaurant.category}`.toLowerCase().includes(query) || dishMatches;
     return matchesSearch
       && (state.category === "All" || restaurant.category === state.category)
+      && (!state.flashCategory || flashMatchesRestaurant(restaurant))
       && (!state.vegOnly || restaurant.veg)
       && (!state.topRated || restaurant.rating >= 4.5)
       && (!state.offersOnly || restaurant.offer)
@@ -1043,21 +1179,77 @@ function renderRestaurants() {
   $("#result-count").textContent = `${matches.length} ${matches.length === 1 ? "place" : "places"}`;
   $("#empty-state").classList.toggle("hidden", matches.length > 0);
   restaurantGrid.classList.toggle("hidden", matches.length === 0);
-  restaurantGrid.innerHTML = matches.map((restaurant) => `
-    <article class="restaurant-card">
-      <button class="restaurant-image-button" type="button" data-open-restaurant="${restaurant.id}" aria-label="View ${restaurant.name} menu">
-        <img class="restaurant-image" src="${foodImage(restaurant.image)}" alt="${restaurant.name} dishes" loading="lazy">
-        <span class="offer-badge">${restaurant.offer}</span>
-        <span class="delivery-time">${restaurant.delivery} min</span>
-      </button>
-      <button class="favorite-toggle ${state.favorites.includes(restaurant.id) ? "is-favorite" : ""}" type="button" data-favorite="${restaurant.id}" aria-label="${state.favorites.includes(restaurant.id) ? "Remove from" : "Add to"} favorites" aria-pressed="${state.favorites.includes(restaurant.id)}">${state.favorites.includes(restaurant.id) ? "♥" : "♡"}</button>
-      <button class="restaurant-details" type="button" data-open-restaurant="${restaurant.id}">
-        <span class="restaurant-title-row"><strong>${restaurant.name}</strong><span class="rating"><span aria-hidden="true">★</span> ${restaurant.rating}</span></span>
-        <span class="restaurant-cuisine">${restaurant.cuisine}</span>
-        <span class="restaurant-meta"><span>${money(restaurant.cost)} for two</span><span class="meta-dot">·</span><span>${restaurant.veg ? "Pure veg" : "Popular pick"}</span></span>
-      </button>
-    </article>
-  `).join("");
+  document.querySelectorAll("[data-flash-category]").forEach((button) => {
+    const selected = state.flashCategory === button.dataset.flashCategory;
+    button.classList.toggle("selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+  restaurantGrid.innerHTML = matches.map((restaurant) => {
+    const dish = restaurant.dishes.find((item) => item.popular) || restaurant.dishes[0];
+    const key = `${restaurant.id}:${dish.id}`;
+    return `
+      <article class="restaurant-card ${restaurant.flashOnly ? "flash-restaurant-card" : ""}">
+        <button class="restaurant-image-button" type="button" data-open-restaurant="${restaurant.id}" aria-label="View ${restaurant.name} menu">
+          <img class="restaurant-image" src="${foodImage(restaurant.image)}" alt="${restaurant.name} dishes" loading="lazy">
+          <span class="offer-badge">${restaurant.offer}</span>
+          <span class="delivery-time">${restaurant.delivery} min</span>
+        </button>
+        <button class="favorite-toggle ${state.favorites.includes(restaurant.id) ? "is-favorite" : ""}" type="button" data-favorite="${restaurant.id}" aria-label="${state.favorites.includes(restaurant.id) ? "Remove from" : "Add to"} favorites" aria-pressed="${state.favorites.includes(restaurant.id)}">${state.favorites.includes(restaurant.id) ? "♥" : "♡"}</button>
+        <button class="restaurant-details" type="button" data-open-restaurant="${restaurant.id}">
+          <span class="restaurant-title-row"><strong>${restaurant.name}</strong><span class="rating"><span aria-hidden="true">★</span> ${restaurant.rating}</span></span>
+          <span class="restaurant-cuisine">${restaurant.cuisine}</span>
+          <span class="restaurant-meta"><span>${money(restaurant.cost)} for two</span><span class="meta-dot">·</span><span>${restaurant.veg ? "Pure veg" : "Popular pick"}</span></span>
+        </button>
+        <div class="restaurant-dish-preview">
+          <img src="${foodImage(dish.image, 180)}" alt="" loading="lazy">
+          <div class="restaurant-dish-copy"><span>POPULAR PICK</span><strong>${dish.name}</strong><b>${money(dish.price)}</b></div>
+          ${state.cart[key]
+            ? `<div class="quantity-control"><button type="button" data-quantity="-1" data-key="${key}" aria-label="Remove one ${dish.name}">−</button><span>${state.cart[key]}</span><button type="button" data-quantity="1" data-key="${key}" aria-label="Add one ${dish.name}">+</button></div>`
+            : `<button class="dish-quick-add" type="button" data-add-item="${key}" aria-label="Add ${dish.name} to cart">+ Add</button>`}
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+function flashProductCategory(restaurant, dish) {
+  return restaurant.flashOnly ? dish.flashCategory : null;
+}
+
+function renderFlashCatalog() {
+  const activeFilter = document.querySelector("[data-flash-filter].selected")?.dataset.flashFilter || "All items";
+  const query = state.query.trim().toLowerCase();
+  const restaurant = restaurants.find((item) => item.id === "cravy-flash");
+  const items = restaurant.dishes
+    .filter((dish) => activeFilter === "All items" || flashProductCategory(restaurant, dish) === activeFilter)
+    .filter((dish) => !query || `${dish.name} ${dish.description} ${dish.flashCategory}`.toLowerCase().includes(query))
+    .map((dish, index) => ({ restaurant, dish, category: flashProductCategory(restaurant, dish), index }));
+  $("#flash-item-count").textContent = `${items.length} ${items.length === 1 ? "item" : "items"}`;
+  $("#flash-empty-state").classList.toggle("hidden", items.length > 0);
+  $("#flash-product-grid").classList.toggle("hidden", items.length === 0);
+  $("#flash-product-grid").innerHTML = items.map(({ restaurant, dish, category, index }) => {
+    const key = `${restaurant.id}:${dish.id}`;
+    const quantity = state.cart[key] || 0;
+    const discountedPrice = Math.round(dish.price * (100 - dish.discount) / 100);
+    return `
+      <article class="flash-product-card">
+        ${category === "Vegetables"
+          ? `<img class="flash-product-image" src="${vegetableImage(index)}" alt="${dish.name}" loading="lazy">`
+          : `<img class="flash-product-image" src="${foodImage(dish.image)}" alt="${dish.name}" loading="lazy">`}
+        <span class="flash-discount-badge">${dish.discount}% OFF</span>
+        <div class="flash-product-info">
+          <span class="flash-product-category">${category === "Fruits" ? "Fresh Fruits" : category}</span>
+          <h2>${dish.name}</h2>
+          <p>${dish.quantityLabel} <span aria-hidden="true">·</span> Delivered in 10–15 mins</p>
+          <div class="flash-product-bottom"><div><strong>${money(discountedPrice)}</strong><del>${money(dish.price)}</del></div>
+            ${quantity
+              ? `<div class="quantity-control"><button type="button" data-quantity="-1" data-key="${key}" aria-label="Remove one ${dish.name}">−</button><span aria-live="polite">${quantity}</span><button type="button" data-quantity="1" data-key="${key}" aria-label="Add one ${dish.name}">+</button></div>`
+              : `<button class="add-item-button" type="button" data-add-item="${key}"><span aria-hidden="true">+</span> Add</button>`}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
 }
 
 function renderCart() {
@@ -1170,6 +1362,8 @@ function addToCart(key) {
   saveStorage(keys.cart, state.cart);
   renderCart();
   renderMenuQuantities();
+  renderFlashCatalog();
+  renderRestaurants();
   showToast("Added to your cart!");
 }
 
@@ -1227,6 +1421,7 @@ function setQuery(value) {
   $("#search-input").value = value;
   $("#hero-search-input").value = value;
   renderRestaurants();
+  if (document.body.classList.contains("flash-page-mode")) renderFlashCatalog();
   $("#restaurants").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -1244,6 +1439,7 @@ function resetFilters() {
   state.offersOnly = false;
   state.favoritesOnly = false;
   state.category = "All";
+  state.flashCategory = null;
   state.query = "";
   $("#search-input").value = "";
   $("#hero-search-input").value = "";
@@ -1342,20 +1538,54 @@ async function analyzeFoodItem(form) {
 }
 
 function openAccountDialog() {
-  showDialog(`<div class="simple-dialog"><div class="account-avatar">A</div><p class="section-kicker">WELCOME TO CRAVE</p><h2 id="dialog-title">Good food is closer.</h2><p>Sign in is a demo feature. No account or personal information is stored.</p><form id="account-form" class="checkout-form"><label>Email or phone<input name="contact" type="text" placeholder="you@example.com" required></label><button class="primary-button checkout-submit" type="submit">Continue</button></form></div>`);
+  showDialog(`<div class="simple-dialog"><div class="account-avatar">A</div><p class="section-kicker">WELCOME TO CRAVY</p><h2 id="dialog-title">Good food is closer.</h2><p>Sign in is a demo feature. No account or personal information is stored.</p><form id="account-form" class="checkout-form"><label>Email or phone<input name="contact" type="text" placeholder="you@example.com" required></label><button class="primary-button checkout-submit" type="submit">Continue</button></form></div>`);
 }
 
 renderCategories();
 renderRestaurants();
 renderCart();
 $("#current-location").textContent = state.location;
+if (new URLSearchParams(window.location.search).get("view") === "flash") {
+  document.body.classList.add("flash-page-mode");
+  $("#flash-page").hidden = false;
+  document.title = "Cravy Flash - Delivered in 10–15 minutes";
+  $("#brand-logo").innerHTML = 'cravy <span class="brand-flash">flash</span>';
+  $("#brand-logo").setAttribute("aria-label", "Cravy Flash home");
+  $(".flash-nav-label").classList.add("hidden");
+  $(".flash-speed-label").textContent = "10–15 min delivery";
+  $(".flash-speed-label").classList.remove("hidden");
+  $("#search-input").placeholder = "Search fruits, treats, and essentials";
+  $(".header-search kbd").classList.add("hidden");
+  renderFlashCatalog();
+}
 
 $("#category-list").addEventListener("click", (event) => {
   const button = event.target.closest("[data-category]");
   if (!button) return;
   state.category = button.dataset.category;
+  state.flashCategory = null;
   renderCategories();
   renderRestaurants();
+});
+
+$(".flash-options").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-flash-category]");
+  if (!button) return;
+  state.category = "All";
+  state.flashCategory = state.flashCategory === button.dataset.flashCategory ? null : button.dataset.flashCategory;
+  renderCategories();
+  renderRestaurants();
+  $("#restaurants").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+$(".flash-catalog-filters").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-flash-filter]");
+  if (!button) return;
+  $(".flash-catalog-filters .selected")?.classList.remove("selected");
+  $(".flash-catalog-filters [aria-pressed='true']")?.setAttribute("aria-pressed", "false");
+  button.classList.add("selected");
+  button.setAttribute("aria-pressed", "true");
+  renderFlashCatalog();
 });
 
 restaurantGrid.addEventListener("click", (event) => {
@@ -1383,11 +1613,13 @@ $("#search-input").addEventListener("input", (event) => {
   state.query = event.target.value;
   $("#hero-search-input").value = event.target.value;
   renderRestaurants();
+  if (document.body.classList.contains("flash-page-mode")) renderFlashCatalog();
 });
 $("#hero-search-input").addEventListener("input", (event) => {
   $("#search-input").value = event.target.value;
   state.query = event.target.value;
   renderRestaurants();
+  if (document.body.classList.contains("flash-page-mode")) renderFlashCatalog();
 });
 $("#hero-search-button").addEventListener("click", () => setQuery($("#hero-search-input").value));
 $("#hero-search-input").addEventListener("keydown", (event) => {
@@ -1410,6 +1642,7 @@ $("#favorites-button").addEventListener("click", () => {
 });
 $("#all-categories-button").addEventListener("click", () => {
   state.category = "All";
+  state.flashCategory = null;
   renderCategories();
   renderRestaurants();
 });
@@ -1424,7 +1657,7 @@ overlay.addEventListener("click", closeCart);
 $("#checkout-button").addEventListener("click", openCheckout);
 $("#footer-help").addEventListener("click", (event) => {
   event.preventDefault();
-  showDialog(`<div class="simple-dialog"><p class="section-kicker">WE'RE HERE FOR YOU</p><h2 id="dialog-title">A little help?</h2><p>Crave is a front-end demo. Orders are not sent to restaurants and payments are not processed. Your saved cart and favorites stay in this browser.</p><button class="primary-button full-button" type="button" data-close-dialog>Got it</button></div>`);
+  showDialog(`<div class="simple-dialog"><p class="section-kicker">WE'RE HERE FOR YOU</p><h2 id="dialog-title">A little help?</h2><p>Cravy is a front-end demo. Orders are not sent to restaurants and payments are not processed. Your saved cart and favorites stay in this browser.</p><button class="primary-button full-button" type="button" data-close-dialog>Got it</button></div>`);
 });
 
 document.addEventListener("click", (event) => {
@@ -1439,6 +1672,8 @@ document.addEventListener("click", (event) => {
     saveStorage(keys.cart, state.cart);
     renderCart();
     renderMenuQuantities();
+    renderFlashCatalog();
+    renderRestaurants();
   }
 
   const replaceButton = event.target.closest("[data-replace-cart]");

@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Find your next favorite meal and order from local restaurants.">
-    <title>Crave - Food delivery, made delightful</title>
+    <meta name="description" content="Order your favorite meals and fresh essentials with Cravy.">
+    <title>Cravy - Food delivery, made delightful</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+    <script src="app.js?v=20261101-1" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#" aria-label="Crave home">crave<span>.</span></a>
+      <a class="brand" id="brand-logo" href="index.html" aria-label="Cravy home">cravy<span>.</span></a>
       <button class="delivery-location" id="location-button" type="button" aria-label="Change delivery location">
         <span class="location-pin" aria-hidden="true">⌖</span>
         <span class="location-copy"><strong>Delivering to</strong><span id="current-location">Indiranagar, Bengaluru</span></span>
@@ -23,6 +23,7 @@
         <kbd>⌘ K</kbd>
       </label>
       <nav class="header-actions" aria-label="Main navigation">
+        <a class="nav-button flash-nav-button" id="flash-button" href="?view=flash"><span aria-hidden="true">⚡</span><span class="flash-nav-label">Cravy Flash</span><span class="flash-speed-label">Lightning delivery in 10–15 mins</span></a>
         <button class="nav-button favorites-nav" id="favorites-button" type="button"><span aria-hidden="true">♡</span><span>Favorites</span></button>
         <button class="nav-button account-button" id="account-button" type="button"><span class="avatar" aria-hidden="true">A</span><span>Sign in</span></button>
         <button class="cart-button" id="cart-button" type="button" aria-label="Open your cart"><span aria-hidden="true">▱</span><span>Cart</span><b id="cart-count">0</b></button>
@@ -33,8 +34,8 @@
       <section class="hero page-width" aria-labelledby="hero-title">
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-dot"></span> GOOD FOOD, GOOD MOOD</div>
-          <h1 id="hero-title">A little joy,<br>delivered <em>fresh.</em></h1>
-          <p>Discover the best food around you, made with love and brought right to your door.</p>
+          <h1 id="hero-title">Craving something<br><em>delicious?</em></h1>
+          <p>Discover the best food around you, made with love and brought right to your door. Order now!</p>
           <div class="hero-search-row">
             <div class="hero-search">
               <span aria-hidden="true">⌕</span>
@@ -51,6 +52,52 @@
           <div class="hero-sticker sticker-delivery"><span class="delivery-icon">↗</span><span><strong>30 min</strong><small>At your doorstep</small></span></div>
           <span class="hero-sparkle sparkle-one">✳</span><span class="hero-sparkle sparkle-two">✦</span>
         </div>
+      </section>
+
+      <section class="flash-section page-width" id="cravy-flash" aria-labelledby="flash-title">
+        <div class="flash-heading">
+          <div><p class="section-kicker">FRESH PICKS, FAST</p><h2 id="flash-title"><span aria-hidden="true">⚡</span> Cravy Flash</h2></div>
+          <p>Everyday essentials and sweet treats, at your door in 10–15 minutes.</p>
+        </div>
+        <div class="flash-options" aria-label="Shop Cravy Flash categories">
+          <button class="flash-option" type="button" data-flash-category="Fruits" aria-pressed="false"><span aria-hidden="true">🍎</span> Fresh Fruits</button>
+          <button class="flash-option" type="button" data-flash-category="Dry Fruits" aria-pressed="false"><span aria-hidden="true">🥜</span> Dry Fruits</button>
+          <button class="flash-option" type="button" data-flash-category="Vegetables" aria-pressed="false"><span aria-hidden="true">🥬</span> Vegetables</button>
+          <button class="flash-option" type="button" data-flash-category="Cakes" aria-pressed="false"><span aria-hidden="true">🍰</span> Cakes</button>
+          <button class="flash-option" type="button" data-flash-category="Ice Creams" aria-pressed="false"><span aria-hidden="true">🍨</span> Ice Creams</button>
+          <button class="flash-option" type="button" data-flash-category="Chocolates" aria-pressed="false"><span aria-hidden="true">🍫</span> Chocolates</button>
+        </div>
+      </section>
+
+      <section class="flash-catalog page-width" id="flash-page" aria-labelledby="flash-page-title" hidden>
+        <a class="flash-back-link" href="index.html">← Back to Cravy</a>
+        <div class="flash-hero-banner">
+          <div class="flash-hero-copy">
+            <span class="flash-promise"><span aria-hidden="true">⚡</span> LIGHTNING DELIVERY IN 10–15 MINS</span>
+            <p class="section-kicker">FRESH FROM THE FARM. TREATS FROM THE FREEZER.</p>
+            <h1 id="flash-page-title">Good things,<br><em>right on time.</em></h1>
+            <p>Farm-fresh produce and feel-good desserts, delivered before the craving fades.</p>
+            <a class="flash-shop-link" href="#flash-products">Shop the collection <span aria-hidden="true">↓</span></a>
+          </div>
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1100&q=85" alt="Fresh colorful fruit and vegetables" fetchpriority="high">
+          <span class="flash-hero-sticker">Freshness<br>in a flash <span aria-hidden="true">✦</span></span>
+        </div>
+        <div class="section-heading flash-catalog-heading">
+          <div><p class="section-kicker">PICK YOUR QUICK FIX</p><h2>Shop by category</h2></div>
+          <span id="flash-item-count" class="filter-result" aria-live="polite"></span>
+        </div>
+        <div class="flash-catalog-filters" role="group" aria-label="Filter Cravy Flash items">
+          <button class="flash-category-card selected" type="button" data-flash-filter="All items" aria-pressed="true"><span aria-hidden="true">✨</span><strong>All items</strong></button>
+          <button class="flash-category-card" type="button" data-flash-filter="Fruits" aria-pressed="false"><span aria-hidden="true">🍎</span><strong>Fresh Fruits</strong></button>
+          <button class="flash-category-card" type="button" data-flash-filter="Dry Fruits" aria-pressed="false"><span aria-hidden="true">🥜</span><strong>Dry Fruits</strong></button>
+          <button class="flash-category-card" type="button" data-flash-filter="Vegetables" aria-pressed="false"><span aria-hidden="true">🥬</span><strong>Vegetables</strong></button>
+          <button class="flash-category-card" type="button" data-flash-filter="Cakes" aria-pressed="false"><span aria-hidden="true">🍰</span><strong>Cakes</strong></button>
+          <button class="flash-category-card" type="button" data-flash-filter="Ice Creams" aria-pressed="false"><span aria-hidden="true">🍨</span><strong>Ice Creams</strong></button>
+          <button class="flash-category-card" type="button" data-flash-filter="Chocolates" aria-pressed="false"><span aria-hidden="true">🍫</span><strong>Chocolates</strong></button>
+        </div>
+        <div class="flash-products-heading" id="flash-products"><div><p class="section-kicker">THE GOOD STUFF, DELIVERED QUICK</p><h2>Today’s quick picks</h2></div><span>Freshness, just a few minutes away</span></div>
+        <div class="flash-product-grid" id="flash-product-grid" aria-live="polite"></div>
+        <div class="empty-state hidden" id="flash-empty-state"><span aria-hidden="true">🛍️</span><h3>No items found</h3><p>Choose another Cravy Flash category.</p></div>
       </section>
 
       <section class="categories-section page-width" aria-labelledby="category-title">
@@ -95,7 +142,7 @@
       </section>
     </main>
 
-    <footer class="site-footer page-width"><a class="brand footer-brand" href="#">crave<span>.</span></a><p>Made with a little extra love. © 2025 Crave</p><div><a href="#restaurants">Restaurants</a><a href="#" id="footer-help">Help</a></div></footer>
+    <footer class="site-footer page-width"><a class="brand footer-brand" href="index.html">cravy<span>.</span></a><p>Made with a little extra love. © 2026 Cravy</p><div><a href="#restaurants">Restaurants</a><a href="#" id="footer-help">Help</a></div></footer>
 
     <div class="overlay hidden" id="overlay" aria-hidden="true"></div>
     <aside class="cart-drawer" id="cart-drawer" aria-label="Your cart" aria-hidden="true">

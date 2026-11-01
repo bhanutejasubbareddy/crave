@@ -141,6 +141,7 @@ const server = http.createServer(async (request, response) => {
     const contents = await readFile(path.join(__dirname, file[0]));
     response.writeHead(200, {
       "Content-Type": file[1],
+      "Cache-Control": "no-cache, must-revalidate",
       "X-Content-Type-Options": "nosniff",
     });
     response.end(request.method === "HEAD" ? undefined : contents);

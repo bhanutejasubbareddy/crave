@@ -1,4 +1,4 @@
-# Crave
+# Cravy
 
 ## Run the app with Gemini food analysis
 
